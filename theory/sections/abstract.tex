@@ -1,0 +1,69 @@
+
+% If the thesis is printed on both sides of the page then 
+% the second page must be must be empty. Comment this out
+% if you print only to one side of the page comment this out
+%\newpage
+%\thispagestyle{empty}    
+%\phantom{Text to fill the page}
+% END OF EXTRA PAGE WITHOUT NUMBER
+
+
+%===COMPULSORY INFO PAGE
+\newpage
+
+%=== Info in English
+\newcommand\EngInfo{{%
+\selectlanguage{english}
+\noindent\textbf{\large \thesistitle{}}
+
+\vspace*{1ex}
+
+\noindent\textbf{Abstract:}
+
+\noindent
+
+Location-based services have become ubiquitous in today's society, and their integration with various applications and technologies has shaped our interaction with the physical world. The current state of location-based systems is very far from ensuring integrity of the location data, especially in trustless environments, with no individual reliability guarantees. A paradigm shift is needed in order to provide security against geo-tampering or location spoofing. To address such requirements, digital and verifiable \pol{} systems may help in materializing the idea of location-based authentication or authorization in adversarial environments. Such systems allow for a vast range of applications in the fields of smart cities, augmented democracy, digital integrity, liability, and internet transparency. In this thesis, we present a novel approach to the problem, dissecting the \pol{} systems' paradigm and building upon existing work, to further prototype the path towards fully decentralized \pol{}. Making use of mesh network technologies and permissionless consensus mechanisms, we specify a new protocol and implement and evaluate a \poc{}, showcasing the generation of complete, verifiable, and spatio-temporally sound location proofs.
+
+\vspace*{1ex}
+
+\noindent\textbf{Keywords:} location-based services, proof-of-location, mesh networks, permissionless consensus, blockchain, smart contracts
+
+\vspace*{1ex}
+
+\noindent\textbf{CERCS:} P170 - Computer science, numerical analysis, systems, control
+
+\vspace*{1ex}
+}}%\newcommand\EngInfo
+
+
+%=== Info in Estonian
+\newcommand\EstInfo{{%
+\newpage
+\selectlanguage{estonian}
+\noindent\textbf{\large Detsentraliseeritud asukoha tõendamise suunas}
+\vspace*{1ex}
+
+\noindent\textbf{Lühikokkuvõte:} 
+
+\noindent
+
+Asukohapõhised teenused on tänapäeva ühiskonnas üldlevinud ning nende integreeritavus erinevate rakenduste ja tehnoloogiatega on kujundanud meie suhtlust füüsilise maailmaga. Asukohapõhiste süsteemide praegune seisund ei taga kaugeltki asukohateabe terviklikkust, eriti usaldamatutes keskkondades, kus puuduvad individuaalsed usaldusväärsuse tagatised. On vaja paradigma muutust, et tagada turvalisus geograafilise manipuleerimise või asukoha võltsimise vastu. Nende nõuetele vastamiseks võivad digitaalsed ja tõendatavad asukohapäringu süsteemid aidata realiseerida asukohapõhist autentimist või autoriseerimist vaenulikes keskkondades. Sellistele süsteemidele leidub laialdaselt rakendusi nutikate linnade, laiendatud demokraatia, digitaalse terviklikkuse, vastutuse ja interneti läbipaistvuse valdkondades. Käesolevas lõputöös tutvustame probleemile uudset lähenemist, uurides asukohatõestussüsteemide paradigmat ja tuginedes olemasolevatele süsteemidele, et liikuda täielikult detsentraliseeritud asukohatõenduse poole. Kasutades võrgustumistehnoloogiad ja lubadeta konsensusmehhanisme, määratleme uue protokolli ning rakendame ja hindame kontseptsioonitõestust, mis tutvustab täielike, kontrollitavate ning ruumilis-ajaliselt kindlaid asukoha tõendite genereerimist.
+
+\vspace*{1ex}
+
+\noindent\textbf{Võtmesõnad:} asukohapõhised teenused, asukohatõend, võrgustumistehnoloogiad, lubadeta konsensus, plokiahel, targad lepingud
+
+\vspace*{1ex}
+
+\noindent\textbf{CERCS:} P170 - Arvutiteadus, arvanalüüs, süsteemid, kontroll 
+
+\vspace*{1ex}
+}}%\newcommand\EstInfo
+
+
+%=== Determine the order of languages on Info page
+\iflanguage{english}{\EngInfo}{\EstInfo}
+\iflanguage{estonian}{\EngInfo}{\EstInfo}
+
+\newpage
+\tableofcontents
