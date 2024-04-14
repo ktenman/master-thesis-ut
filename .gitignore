@@ -21,7 +21,7 @@ root.cow*
 openwrt/
 references/crypto/*
 references/thesis-examples/*
-proof-of-concept/openwrt-builder/output/*
+web-mmse/openwrt-builder/output/*
 *references/
 target/
 
