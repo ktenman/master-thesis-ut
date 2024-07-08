@@ -1,17 +1,119 @@
+Europe's demographic landscape is rapidly aging, with Eurostat projecting the population aged 65 and older to reach 29.4\% by 2050 \cite{Eurostat2020}. This shift correlates with an increase in age-related cognitive impairments. The prevalence of Mild Cognitive Impairment (MCI) in individuals aged 60 and above ranges between 6-12\% \cite{Petersen2018}, while dementia cases in Europe are expected to nearly double to 18.85 million by 2050 \cite{AlzheimerEurope2019}.
 
-% \TODO{What is it in simple terms (title)?}
-% \TODO{Why should anyone care?}
-% \TODO{What was my contribution?} 
-% \TODO{What you are doing in each section (a sentence or two per section)}
+This increased prevalence puts a heavy toll on healthcare and the wider community. Early identification and intervention may make a highly relevant difference in the process of cognitive decline, hence improving quality of life and reducing the burden on health care \cite{Livingston2020}. Cognitive assessment tests are paramount in screening, diagnosis, monitoring, and assessing interventions \cite{Cullen2007, Petersen2018}.
 
-Throughout history, humans have sought to accurately locate themselves, within the vastness of space and time. From mapping their surroundings and establishing their borders, to navigating the seas, with the help of stars, humans have always had an intrinsic need for fundamentally solving the localization problem, asserting their physical existence in the world. This need has been adaptively met through various means, including the use of maps, compasses, and astronomical observations. Today, with the advent of technology, we have access to advanced methods of precise localization, like the well-known GPS-based systems. Applications that rely on such systems operate founded in the expectation that the involved parties are sufficiently honest to be correctly synchronized in space and time, having their individual receivers relatively calibrated, and marking the correct value in their internal clocks. This thesis will address the design challenges of trustless systems that aim at ensuring integrity of the location data, examining the rise of location-based authentication or authorization and the need for tamper-proof, correct, and spatio-temporally sound location information. In GPS-based systems, strategic interactions between rational agents often end up supporting this implicit trust. One party provides a location-based service, and another party makes use of it for its individual benefit, by providing an allegedly non-tampered time-conscious piece of location claim. This interaction appears to be one of a cooperative strategy, that can be observed in most mapping platforms, navigation systems, or mobility and ride-hailing apps. If driven by the reasoning goal of extracting correct information from the interacting system, users are logically motivated to calibrate their devices and report an accurate location. The services, with the higher goal of not losing users, due to malfunctioning or inaccuracy, are thus motivated to provide maximized quality when consuming the location data. 
+There are, however, several problems and issues associated with existing assessment methods: variability of administration, use of time, cultural response biases, and limitations of access \cite{Prince2013, Cordell2013, Henrich2010, Goldberg2015, Geddes2020, Bilder2020}. Despite these difficulties, the study elaborates on developing a Web-based Mini-Mental State Examination (MMSE) application. Despite the HMSE's wide application for detecting mild impairments, it has some limitations, and some cultural biases are reported \cite{Folstein1975, Tombaugh1992}. In this respect, the web-based MMSE method proposed here would aim to increase accessibility, efficiency, and reach, thus benefiting remote or underserved regions \cite{Bauer2012, Zygouris2017, Seifan2015}.
 
-This paradigm is now ubiquitous, but it may be structurally unsuitable for other scenarios. Our work stresses those situations that, therefore and inversely, fundamentally require verifiable \pol{} to assert a particular state or derive a conclusion. The trust levels required, in these scenarios, to testify to one's location claims ought as well to be crucially measurable. The concept of location-based authentication or authorization in adversarial environments that rely on information gathered in a trustless setup eventually materializes into services requiring, for instance, a digital certificate as proof that a given user is within a particular geographical area, to enable certain functionalities or assert liability. Applications of such services include customer reward systems for physical stores, location-authenticated business review platforms, location-restricted web content delivery, or voter's physical presence attestation. The present surge of highly realistic generative AI tools has also made the case for the need to certify the physical originality of digital content, by photographers, reporters, and other content creators. Another use case is the verification of the provision of services, such as the delivery or supply of goods, by third-party providers. Security against geo-tampering or location spoofing in a relatively trustless environment is needed to achieve high levels of integrity. In consequence, enforcing and contributing to tamper-proof, correct, and censorship resistant location information, in today's chaotically data driven world, may preemptively demand for novel efforts. 
+\textbf{Keywords:} aging population, cognitive impairments, dementia, MCI, cognitive assessment, MMSE, web-based tools.
 
-The basic infrastructural concept of a \pol{} system is somewhat understood, and theoretical or experimental solutions have been delivered throughout the years. These solutions have evolved parallel with their trust assumptions, beginning with a fully trusted setup and progressively shifting towards modern requirements for operational decentralization, with an inevitable distribution of resources, power, and profit. Recent attempts contemplate the need for a permissionless means of reaching consensus between a quorum of witnesses, which can attest to one's presence at a given point in space and at a given moment in time. These concepts take shape with a combination of tools: wireless technologies as short-ranged message-exchanging means, cryptographic protocols as confidentiality, integrity, or authentication enablers, and distributed ledgers as publicly trusted record keepers. The quest for a solution that could make this kind of location-based services as prevalent and ubiquitous shall aim to address a set of design challenges. These challenges are, among others, the solution's flexibility and deployability, preferably by making use of existing infrastructure, and the solution's security and privacy, obeying the modern cryptographic standards and requirements, to guarantee envisioned levels of integrity and resiliency to attacks. This thesis, aiming to address these matters, delivers the following contributions:
-\begin{enumerate}
-\item It provides an overview of the \pol{} systems' paradigm, including the underlying premises and the strategic interactions between rational agents, along with a review of the state of the art in the field. The review is categorized in terms of trust levels, from fully trusted to permissionless environments, and, consequently, in terms of infrastructure, from centralized to decentralized systems.
-\item It also attempts at the design of a novel \pol{} protocol and the implementation of a \poc{} that can be deployed in a permissionless manner, using existing technology. The work is specifically based on permissionless consensus mechanisms and the use of routing protocols, for mobile ad hoc mesh networks. The goal is to set up a mesh network of witnesses that can collectively agree to assert one's presence in a given geographical area.
-\end{enumerate}
+\subsection{The Aging Population and Cognitive Health}
 
-The structure of the work is as follows. In Chapter~\ref{sec:background}, an introduction to the underlying concepts, hypotheses, and applications is provided, together with an outline of the technology involved in the practical implementation. Chapter~\ref{sec:related-work} examines similar work, classified according to different trust levels. In Chapter~\ref{sec:protocol-fundamentals}, a general overview of the requirements for the proposed solution is given. Chapter~\ref{sec:proof-of-concept} details the architecture's design, implementation, and evaluation. Finally, Chapter~\ref{sec:conclusion} presents the conclusion and recommendations for future work.
+The demographic situation in Europe changes dramatically due to the fast-growing aging population. According to the Eurostat view, the share of those 65 and older will increase from 20.3\% in 2019 to 29.4\% by 2050 \cite{Eurostat2020}. This crucial demographic change corresponds to a rise in the incidence of age-related cognitive impairments like MCI and different forms of dementia \cite{Livingston2020}. Recent studies further estimate that MCI now prevails in 6-12\% of adults aged 60 and above \cite{Petersen2018}.
+
+This increased prevalence of cognitive impairment comes at a considerable cost to health systems, families, and societies. However, timely detection and identification of interventions have been noticed to make a vast difference in the progression of decline. Such timely identification may facilitate healthcare providers' intervention to slow progress, improve quality of life, and reduce the overall burden on healthcare systems \cite{Livingston2020}. Thus, this offers a means whereby timely diagnosis will enable patients and their families to plan a future care pathway, allowing them to decide about the various treatment options brought about by different available avenues \cite{Sperling2011}.
+
+Considering these views, an emerging need presses for efficient, accessible, and trustworthy cognitive assessment tools, enabling mass-scale screening and monitoring of the aging population based on cognitive function. From this, we hasten to give reasons for our research to develop a much-improved Web-based Mini-Mental State Examination application for enhancing accessibility and efficiency in cognitive assessment within clinical and research settings.
+
+\subsection{Cognitive Assessment and the MMSE}
+
+Cognitive assessment is crucial in detecting and managing cognitive impairments, especially in the elderly. Such assessments enable screening for heterogeneous cognitive disorders and estimation of the severity of specific impairments to monitor disease progression and the effectiveness of interventions. These tools make early detection possible and initiate timely intervention, halting deterioration and enhancing the quality of life, besides offering essential information for studies on cognitive aging \cite{Langa2015, Petersen2018, Weintraub2009}.
+
+Even though it is relevant, the administration of cognitive assessment has faced a variety of challenges: variability across settings, time-consuming paper-and-pencil methods, cultural and linguistic biases, and remote assessment-related complications \cite{Prince2013, Cordell2013, Henrich2010, Goldberg2015, Geddes2020, Bilder2020}.
+
+\subsubsection{The Mini-Mental State Examination (MMSE)}
+
+Folstein et al. developed the MMSE in 1975, becoming a standard cognitive screening tool in clinical practice and research. Test items cover various cognitive domains, such as orientation, attention, memory, language, and visuospatial skills of a subject \cite{Folstein1975, Tombaugh1992, Shulman2006}. In most cases, it is administered face-to-face by clinicians and includes tasks ranging from a subject's cognitive orientation to visual construction.
+
+The advantages of MMSE are its ease of administration and its high sensitivity toward moderate to severe levels of cognitive impairments. Nevertheless, it is known to be relatively insensitive to mild impairments, to have cultural biases, and is limited in measuring executive functions \cite{Folstein1975}.
+
+\subsubsection{Rationale for a Web-Based MMSE}
+
+The need to overcome traditional assessment limitations and address challenges like the COVID-19 pandemic, which highlighted remote healthcare solution needs, drives the move towards a web-based MMSE. A web-based MMSE can increase accessibility, reduce administration time, and enable remote patient monitoring, enhancing the ability to track changes over time \cite{Bauer2012, Seifan2015, Zygouris2017, Geddes2020, Cullum2014, Lim2020, Harrington2021}.
+
+Modern cognitive evaluations have embraced technologies, such as artificial intelligence, in personalization and innovating test procedures that capture subtle changes in cognitive function. However, challenges accompany these digital versions of MMSE, including the still-existing digital divide among older adults, concerns about data security, and validation against traditional evaluation methods \cite{Bilder2020, Wild2021}. Discussion on challenges remains open in building a robust and widely accepted web-based cognitive assessment tool.
+
+\textbf{The Novelty of the Study:} This research is novel in its approach toward using state-of-the-art AI techniques with LLMs for cognitive assessments. In the current case, a Mixtral-Dolphin 8x7B to be run on Ollama, along with the vision model for tasks that require a visual component and fallbacks from ChatGPT v4, will be utilized. At one's disposal, this armory of technologies recently available creates new opportunities to enhance adaptability, accuracy, and interpretability in cognitive assessments. Equipped with these leading-edge AI technologies, web-based MMSE will radically change today's traditional cognitive screening and raise a new bar across the discipline. This multi-model approach pushes the envelope on the automation of cognitive assessment, guaranteeing resilience under various cognition and system conditions domains.
+
+\subsection{Research Objectives and Expert Evaluation} 
+
+This thesis intends to develop and evaluate the web-based version of the Mini-Mental State Examination, which would deal with some of the limitations of traditional methods for cognitive assessment, drawing from the benefits made possible by today's digital technologies. Guiding the research are the following expressed objectives and questions that are to be reviewed by technical experts and those concerned with clinical applications:
+
+\textbf{Primary Research Objective:}
+Develop and evaluate a web-based adaptation of the Mini-Mental State Examination and validate its properties against the constraints of traditional methods for cognitive assessment while taking advantage of the benefits that digital technology can offer.
+
+\begin{itemize}
+    \item \textbf{Hypothesis 1:} Experts will confirm that the web-based MMSE has excellent concurrent validity against the traditional MMSE version~\cite{folstein1975mini}.
+    \item \textbf{Hypothesis 2:} Experts will confirm that the web-based MMSE has excellent test-retest reliability equal to the paper form~\cite{tombaugh1992mini}.
+\end{itemize}
+
+\textbf{Secondary Research Question:}
+According to experts in cognitive health, what are the perceived advantages of the web-based MMSE in terms of efficiency and clinical utility?
+
+\begin{itemize}
+    \item \textbf{Hypothesis 3:} Experts will report that the web-based MMSE reduces the administration time and scoring complexity compared to the traditional MMSE.
+    \item \textbf{Hypothesis 4:} Experts will rate the application's usability as high, reflecting ease of use and accessibility.
+\end{itemize}
+
+\textbf{Key Features and Innovations to Be Evaluated:}
+\begin{itemize}
+    \item \textbf{Adaptive Testing:} Use of item response theory~\cite{embretson2013item} to adjust question difficulty based on user responses, aiming to improve sensitivity to subtle cognitive changes.
+    \item \textbf{Multimodal Input:} Inclusion of various input methods such as touchscreen, voice recognition, and microphone interactions to accommodate different user capabilities.
+    \item \textbf{Automated Scoring and Analysis:} Implementation of machine learning algorithms~\cite{shatte2019machine} to automate scoring and provide detailed cognitive performance analyses.
+    \item \textbf{Remote Monitoring:} Capabilities for longitudinal tracking and remote monitoring to detect cognitive function changes over time.
+\end{itemize}
+
+In the context of this research, an expert has experience in the professional and academic setting in cognitive neuroscience, geriatric, psychology, digital health technology, or medical informatics. The experts shall have at least five years of experience in the area they represent and currently have positions at an accredited institution or any recognized organization relevant to the said field.
+
+However, considering the issues of possible time constraints and recruitment difficulties, an additional assessment strategy may be used if need be. This assessment is done by evaluators with at least five years of experience in software development. Though these evaluators may have little or no background in cognitive assessment, their technical background provides substantial insight into the usability, efficiency, and technical realization of the web-based MMSE application.
+
+This plan ensures that, even then, a proper review of the working prototype will be conducted, mainly regarding its technical and user interface aspects and its potential to improve the efficiency of the cognitive assessment procedures. This alternative approach mainly means answering the secondary research questions regarding efficiency and usability. By contrast, primary research objectives within the sphere of clinical validity would still need to be validated by experts in cognitive health in the future.
+
+Keeping flexibility in the assessment strategy allows for a meaningful evaluation of the web-based MMSE system that has contributed to digital cognitive assessment tools and sets a base for future clinical validation studies.
+
+\subsection{Thesis Structure and Significance} 
+
+This section outlines the structure of the thesis. It discusses the potential impact and significance of the research in enhancing cognitive assessment practices through a web-based Mini-Mental State Examination (MMSE). Additionally, it highlights the interdisciplinary relevance of the project across computer science, psychology, and healthcare.
+
+\subsubsection{Potential Impact on Cognitive Assessment Practices}
+
+There is a desirability to make a deep impression on the practice with a web-based version of the Mini-Mental State Examination (MMSE). Some of the critical advantages of these innovations include the following:
+
+\paragraph{Standardization} Through web-based administration, this system seeks to minimize variability in test results that often occurs due to different settings and examiners, thus standardizing the procedure more effectively~\cite{Wild2021}.
+
+\paragraph{Accessibility} Utilizing internet technology enhances the availability of cognitive assessments, especially in regions that are otherwise underserved or remote, making these essential tools more accessible~\cite{Bauer2012}.
+
+\paragraph{Efficiency} By automating scoring and analysis, the web-based MMSE can streamline the entire assessment process, significantly cutting down on the time and resources typically required~\cite{Zygouris2017}.
+
+\paragraph{Longitudinal Monitoring} The digital framework of the MMSE enables more accessible and more consistent monitoring of cognitive changes over time, which is crucial for the early detection of cognitive decline~\cite{Lim2020}.
+
+\subsubsection{Relevance to Computer Science and Healthcare}
+
+This thesis spans several disciplines; therefore, in many ways, it can contribute to all of them:
+
+\paragraph{Computer Science} This research advances web-based technologies, explores machine learning algorithms for cognitive assessment and improves user interface design.
+
+\paragraph{Healthcare} By improving early detection and ongoing monitoring of cognitive issues, the project can lead to timely interventions, ultimately enhancing patient outcomes~\cite{Petersen2018}.
+
+\subsubsection{Facilitating Early Detection, Improving Access, and Enabling Large-Scale Data Collection}
+
+The capabilities of the web-based MMSE include:
+
+\paragraph{Facilitating Early Detection} Increased accessibility and sensitivity to subtle cognitive shifts can significantly aid in the earlier detection of cognitive declines~\cite{Sperling2011}.
+
+\paragraph{Improving Access} The web-based nature helps overcome geographical barriers, thus enhancing Access to cognitive assessments in underserved areas~\cite{Seifan2015}.
+
+\subsubsection{Thesis Structure}
+
+The structure takes the reader through the research process, the findings related to the web-based Mini-Mental State Examination system, and what this tool implies. It has six main chapters related to some points about the research and what it adds regarding cognitive assessment.
+
+\paragraph{Chapter 2: Literature Review} This chapter comprehensively reviews existing literature on cognitive assessments, mainly focusing on the MMSE and its adaptations. It also explores the evolution of computerized cognitive testing and discusses the role of artificial intelligence in enhancing neuropsychological assessment.
+
+\paragraph{Chapter 3: Methodology} Detailed methodologies are described in this chapter, covering the design and implementation of the web-based MMSE application. This includes the technical architecture, the development of cognitive tasks, the integration of artificial intelligence components, and the design of the user interface.
+
+\paragraph{Chapter 4: Implementation and Results} This chapter presents the details of the application's practical implementation and the evaluation study's results. It includes the evaluation against traditional MMSE methods and the results, analysis of application usability, and metrics for performance-related detection and monitoring of mild cognitive impairment.
+
+\paragraph{Chapter 5: Discussion} This chapter discusses the results in light of existing literature. It spells out the implications for cognitive assessment practices and reviews the strengths and limitations of the web-based application, underlining its innovative aspects.
+
+\paragraph{Chapter 6: Conclusion} This final chapter summarizes the essential findings and considers the general implications of the research work. It also suggests future research directions and potential enhancements to the web-based MMSE application.
+
+Each chapter builds upon the previous one to thoroughly understand the web-based cognitive assessment application's development, evaluation, and implications. This thesis aims to contribute significantly to the field by enhancing the accessibility, efficiency, and effectiveness of cognitive assessments through innovative technology.
