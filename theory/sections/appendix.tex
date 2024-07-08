@@ -14,7 +14,11 @@
 
 \addcontentsline{toc}{subsection}{I. Repository}
 
-The source code, documentation, and other materials produced for this thesis are available in the following repository: \url{https://github.com/edurbrito/master-thesis-ut}.
+The source code, documentation, and other materials produced for this thesis are available in the following repositories:
+\begin{itemize}
+    \item Master's Thesis: \url{https://github.com/ktenman/master-thesis-ut}
+    \item MMSE Prototype App: \url{https://github.com/ktenman/mmse-app}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -28,7 +32,7 @@ The source code, documentation, and other materials produced for this thesis are
 
 \subsubsection*{Non-exclusive licence to reproduce thesis and make thesis public}
 
-I, \textbf{Eduardo Ribas Brito}, %author's name
+I, \textbf{\author}, %author's name
 %   \licencehint{10mm}{author's name}
 
 \begin{enumerate}
@@ -36,10 +40,10 @@ I, \textbf{Eduardo Ribas Brito}, %author's name
 herewith grant the University of Tartu a free permit (non-exclusive licence) to
 reproduce, for the purpose of preservation, including for adding to the DSpace digital archives until the expiry of the term of copyright,
 \par
-\textbf{\thesistitle{}}, %
+\textbf{\thesistitle}, %
 %   \licencehint{10mm}{title of thesis}
 \par
-supervised by Ulrich Norbisrath. %supervisor's name
+supervised by \supervisor. %supervisor's name
 %   \licencehint{10mm}{supervisor's name}
 \item
 I grant the University of Tartu a permit to make the work specified in p. 1 available to the public via the web environment of the University of Tartu, including via the DSpace digital archives, under the Creative Commons licence CC BY NC ND 3.0, which allows, by giving appropriate credit to the author, to reproduce, distribute the work and communicate it to the public, and prohibits the creation of derivative works and any commercial use of the work until the expiry of the term of copyright.
@@ -50,9 +54,8 @@ I certify that granting the non-exclusive licence does not infringe other person
 \end{enumerate}
 
 \noindent
-Eduardo Ribas Brito\\ %author's name
-\textbf{\textsl{09/05/2023}}
-
+Konstantin Tenman\\ %author's name
+\textbf{\textsl{13/08/2024}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -63,8 +66,10 @@ Eduardo Ribas Brito\\ %author's name
 
 \addcontentsline{toc}{subsection}{III. Writing Workflow}
 
-The writing and development process of this work was supported and enhanced by multiple tools, extensions, and development environments. This section details the workflow and tools used to produce this thesis.
+The writing and building of this work exploited quite a wide range of tools, extensions, and environments. This appendix documents the workflow and tools employed to produce this thesis.
 
-The writing environment was based on \LaTeX{}, a document preparation system that allows writers to focus on the content, rather than the formatting. Visual Studio Code was the development environment chosen to write the LaTeX code and the thesis content. This lightweight and extensible code editor, combined with the LaTeX Workshop extension, provided a rich set of functionalities, such as syntax highlighting, code completion, source compilation, and live preview. Overleaf was the alternative considered, but it was discarded due to the less flexible and more limited development environment. The LaTeX source code was versioned using Git, and hosted on GitHub, a web-based version control hosting service. The repository also contains the source code of the \poc{}, as well as the supplementing documentation (see Appendix~\ref{appendix:repository}). Within Visual Studio Code, the extensions Code Spell Checker and LTeX LanguageTool were also used to dynamically check the spelling and grammar of the text. Additionally, GitHub Copilot was enabled to provide code completion and debugging support, during the \poc{} programming. Several other extensions were also used to enhance the coding experience, with rich language-specific support.
+The bedrock of the writing environment was, obviously, \LaTeX{}, a complete document preparation system that allows an author not to worry so much about the formatting but to focus on the content. The primary development environment for TeXing and creating the content of this thesis was Visual Studio Code. The LaTeX Workshop plugin added a fully inclusive feature pack to this versatile, extensible editor with syntax highlighting, code completion, real-time compilation, and dynamic preview. Overleaf is an online \LaTeX{} editor used due to its collaboration and template management features.
 
-Outside the development and writing environment, ChatGPT helped with summarizing, rephrasing, contextualizing, correcting, and paraphrasing indiscriminate sections of the writing content. This AI tool helped, as well, with the generation of code snippets and the explanation of multiple command-line interfaces. Grammarly was occasionally used to check the grammar and spelling of the text. Figma and Diagrams.net were used to create the diagrams and figures of this thesis, which contain several images and icons from Flaticon and Freepik catalogues.
+Version control was done with Git, using GitHub as a host for the remote repository. This repository contains the \LaTeX{} source files, the MMSE prototype app code, and the relevant documentation. It follows this in Appendix~\ref{appendix:repository}. Through Visual Studio Code, plugins like Code Spell Checker and LTeX LanguageTool aided real-time spelling and grammar checks. GitHub Copilot was integrated to complete the code and debug the prototype app.
+
+Beyond the core development environment, AI tools such as ChatGPT, Claude AI, Gemini Pro, and others significantly summarized, rewrote, contextualized, and perfected the different content sections. AI Assistants also helped generate code snippets and explain awkward command-line interfaces. Grammarly provided fine-grained language finesse. Diagramming tools have been utilized to create figures and diagrams that include images and icons from trusted web sources.
