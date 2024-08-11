@@ -120,7 +120,7 @@ Automating the MMSE tasks involved several challenges, requiring careful conside
 
 \textbf{Complex Commands:} This task typically involves a three-stage command (e.g., "Take a paper in your right hand, fold it in half, and put it on the floor"). The automated version uses a drag-and-drop interface where users must complete tasks by dragging and placing items as instructed. The system tracks each action and scores it for accuracy, providing immediate feedback for any mistakes.
 
-\textbf{Reading:} The individual is asked to read and follow a written command (e.g., "Close your eyes"). The automated system presents the command as text and asks the user to input a confirmation once the command is understood. The system evaluates the response to ensure comprehension.
+\textbf{Reading:} The individual is asked to read and follow a written command (e.g., "Close your eyes"). The automated system presents the command as text and requests a confirmation from the user upon understanding. The system evaluates the response to ensure comprehension.
 
 \textbf{Writing:} Traditionally, the individual writes a sentence. In the automated version, the user inputs the sentence into a text field. The system uses AI to check the grammar and structure of the sentence, providing feedback on any errors and scoring the response accordingly.
 
@@ -140,12 +140,12 @@ By addressing these challenges, the MMSE application provides a robust, automate
 
 The implementation process of the AI-powered web-based MMSE application followed a structured approach, utilizing modern software engineering practices and technologies. The application was built using a client-server architecture, comprising the following components:
 \begin{itemize}
-    \item Backend: A Java-based Spring Boot application
-    \item Frontend: A Vue.js single-page application
-    \item Database: PostgreSQL for persistent data storage
-    \item External Services: AI models (ChatGPT, Ollama with Llama 3.1:70b) for answer evaluation
-    \item Caching: Redis for distributed caching and session management
-    \item Message Queue: RabbitMQ for asynchronous processing
+    \item Backend: A Java-based Spring Boot application;
+    \item Frontend: A Vue.js single-page application;
+    \item Database: PostgreSQL for persistent data storage;
+    \item External Services: AI models (ChatGPT, Ollama with Llama 3.1:70b) for answer evaluation;
+    \item Caching: Redis for distributed caching and session management;
+    \item Message Queue: RabbitMQ for asynchronous processing.
 \end{itemize}
 
 Figure \ref{fig:system-architecture} shows the structure and the AI-powered web-based MMSE application, and also illustrates interactions between clinicians, patients, the frontend and backend components, the database, AI models, and Redis for caching and distributed locking purposes. In the rest of this section, we describe each of these components in more detail.
@@ -153,22 +153,22 @@ Figure \ref{fig:system-architecture} shows the structure and the AI-powered web-
 \paragraph{Backend Design}
 The Spring Boot application forms the core of the system, managing business logic, data repositories, and AI service interactions. Key features include:
 \begin{itemize}
-    \item RESTful API with versioning
-    \item Service layer implementing core business logic
-    \item Data access layer using Spring Data JPA
-    \item Integration with external AI services
-    \item Security implementation with JWT-based authentication
-    \item Caching and asynchronous processing for improved performance
+    \item RESTful API with versioning;
+    \item Service layer implementing core business logic;
+    \item Data access layer using Spring Data JPA;
+    \item Integration with external AI services;
+    \item Security implementation with JWT-based authentication;
+    \item Caching and asynchronous processing for improved performance.
 \end{itemize}
 
 \paragraph{Frontend Design}
 The Vue.js frontend provides a user-friendly interface for both test administrators and test-takers, featuring:
 \begin{itemize}
-    \item Responsive design for various devices
-    \item State management using Vuex
-    \item Component-based architecture for maintainability
-    \item Accessibility features adhering to WCAG guidelines
-    \item Progressive loading and offline support
+    \item Responsive design for various devices;
+    \item State management using Vuex;
+    \item Component-based architecture for maintainability;
+    \item Accessibility features adhering to WCAG guidelines;
+    \item Progressive loading and offline support.
 \end{itemize}
 
 \paragraph{Development Environment Setup and Version Control}
@@ -177,12 +177,12 @@ GitHub served as the primary version control and collaboration platform, offerin
 \paragraph{Iterative Development Approach and Continuous Integration}
 The development process followed an iterative model closely aligned with agile principles. The initial phase involved mapping out all the MMSE questions, which served as the basis for database design and the overall application structure. The development workflow proceeded as follows:
 \begin{enumerate}
-\item Question mapping and requirements analysis
-\item Database schema design based on question requirements
-\item Implementation of backend services and APIs
-\item Frontend component development
-\item Integration of AI and machine learning models
-\item Continuous testing and refinement
+\item Question mapping and requirements analysis;
+\item Database schema design based on question requirements;
+\item Implementation of backend services and APIs;
+\item Frontend component development;
+\item Integration of AI and machine learning models;
+\item Continuous testing and refinement.
 \end{enumerate}
 
 A GitHub Actions workflow automated the continuous integration (CI) pipeline \cite{github_actions}. This configuration ensured that each commit triggered codebase compilation, execution of unit and integration tests, and performance of code quality checks.
@@ -201,9 +201,9 @@ Dependabot integration into the GitHub repository maintained up-to-date dependen
 \paragraph{Code Quality, Monitoring, and Error Tracking}
 Several tools were integrated into the development process to maintain the quality and consistency of the code:
 \begin{itemize}
-\item ESLint for JavaScript linting
-\item Prettier for code formatting
-\item SonarLint for identifying and fixing code quality issues
+\item ESLint for JavaScript linting;
+\item Prettier for code formatting;
+\item SonarLint for identifying and fixing code quality issues.
 \end{itemize}
 
 These tools were primarily used within the IntelliJ IDEA development environment, providing real-time feedback during coding. ESLint and Prettier configurations were defined in IntelliJ, allowing immediate code style and quality checks as developers wrote the code.
@@ -217,9 +217,9 @@ While not implemented in a production environment, the development process consi
 \subsubsection{Database and Performance}
 The PostgreSQL database schema was designed to efficiently store and retrieve test data, user information, and assessment results. Key entities include:
 \begin{itemize}
-    \item User management (mmse\_user, mmse\_authority, mmse\_user\_authority)
-    \item Test management (test\_entity, user\_answer, patient\_profile, test\_entity\_hash, media\_recording)
-    \item AI integration (dolphin\_question, orientation\_to\_place\_answer)
+    \item User management (mmse\_user, mmse\_authority, mmse\_user\_authority);
+    \item Test management (test\_entity, user\_answer, patient\_profile, test\_entity\_hash, media\_recording);
+    \item AI integration (dolphin\_question, orientation\_to\_place\_answer).
 \end{itemize}
 
 This enhanced schema includes relationships and indexing strategies to ensure optimal performance and data integrity. Figure \ref{fig:database-schema} provides a detailed view of the database schema, illustrating the relationships between key entities such as user management, test management, and AI integration components.
@@ -272,10 +272,10 @@ The database design considers future scalability with partitioning and sharding 
 \paragraph{Security and Privacy Considerations}
 The implementation includes robust security measures \cite{owasp2021top10}:
 \begin{itemize}
-    \item JWT-based authentication and role-based access control
-    \item Strict CORS configuration
-    \item Comprehensive audit logging
-    \item Proactive security monitoring
+    \item JWT-based authentication and role-based access control;
+    \item Strict CORS configuration;
+    \item Comprehensive audit logging;
+    \item Proactive security monitoring.
 \end{itemize}
 
 This implementation process ensured the development of a secure, efficient, and user-friendly AI-powered web-based MMSE application, leveraging modern technologies to enhance cognitive assessment practices.
@@ -286,11 +286,10 @@ In conclusion, the artifact design and development process for the AI-powered we
 
 The use of the application follows a structured process for administering the MMSE, as illustrated in Figure \ref{fig:assessment-flow}. This process consists of the following steps:
 
-
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.34\textwidth]{simplified-flow.png}
-\caption{A detailed view of the interactions and data flow during the assessment process, including patient interaction, backend processing, and score calculation.}
+\caption{A detailed view of the interactions and data flow during the assessment process.}
 \label{fig:assessment-flow}
 \end{center}
 \end{figure}
@@ -305,7 +304,7 @@ The use of the application follows a structured process for administering the MM
         \item \textit{If AI processing is required}: The system routes the response to the appropriate AI model. For instance:
         \begin{itemize}
             \item \textbf{Llama 3.1:70b} for complex language comprehension.
-            \item \textbf{ChatGPT v4o} for processing drawings.
+            \item \textbf{ChatGPT 4o} for processing drawings.
             \item \textbf{Specialized models} for speech-to-text, synonym detection, and semantic understanding.
         \end{itemize}
         \item \textit{If AI processing is not required}: The response undergoes standard processing, bypassing the AI models.
@@ -314,19 +313,13 @@ The use of the application follows a structured process for administering the MM
     \item \textbf{Generation of clinical insights and result presentation}: Scores are calculated periodically, incorporating concurrency control to manage simultaneous access and updates. This step is crucial for maintaining the integrity and accuracy of the assessment scores. The calculated scores are updated in the database, ensuring that the most recent assessment results are available for review. Finally, the clinician reviews the results of the MMSE, providing a comprehensive overview of the patient’s cognitive state.
 \end{enumerate}
 
-
-
 This workflow integrates the roles of healthcare professionals, patients, and the AI-enhanced MMSE Tool, ensuring a comprehensive and efficient assessment process.
-
-
-
-%\newpage
 
 \subsection{Evaluation Approach}
 Assessing the AI-driven web-based MMSE system is essential to verify its efficiency, precision, and user-friendliness compared to conventional techniques. This framework presents a targeted method to evaluate system performance and user interaction through expert assessment \cite{Greenhalgh2017}.
 
 \subsubsection{Performance Indicators}
-The performance of the AI-powered web-based MMSE application will be assessed based on expert evaluations. Key performance indicators (KPIs) include:
+Experts assess the performance of the AI-powered web-based MMSE application. Key performance indicators (KPIs) include:
 \begin{itemize}
 \item \textbf{Test Completion Rate:} Percentage of assessments completed without technical issues, as observed by experts.
 \item \textbf{Assessment Duration:} Average time taken to complete the MMSE, recorded by experts.
@@ -352,4 +345,4 @@ To evaluate the user experience of the AI-powered web-based MMSE, we will gather
 \subsubsection{Data Analysis}
 Data from this evaluation will be analyzed using basic descriptive statistics for the SUS scores and qualitative analysis of interview responses \cite{Braun2006}. This approach will provide initial insights into the application's usability and potential effectiveness, while also identifying areas for future development and more comprehensive evaluation.
 
-It's important to note that this evaluation is a preliminary assessment and does not constitute a full clinical validation of the tool. Future work would be needed to conduct a more comprehensive evaluation with healthcare professionals and a larger, diverse participant group \cite{Geddes2020}.
+It is important to note that this evaluation is a preliminary assessment and does not constitute a full clinical validation of the tool. A more comprehensive evaluation involving healthcare professionals and a larger, diverse participant group is required for future work \cite{Geddes2020}.

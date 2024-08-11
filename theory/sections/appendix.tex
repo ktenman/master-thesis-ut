@@ -12,9 +12,9 @@
 
 \subsection*{\Roman{appendixcounter}. Repository} \label{appendix:repository}
 
-\addcontentsline{toc}{subsection}{I. Repository}
+\addcontentsline{toc}{subsection}{\Roman{appendixcounter}. Repository}
 
-The source code, documentation, and other materials produced for this thesis are available in the following repositories:
+You can find the source code, documentation, and other materials produced for this thesis in the following repositories:
 \begin{itemize}
     \item Master's Thesis: \url{https://github.com/ktenman/master-thesis-ut}
     \item MMSE Prototype App: \url{https://github.com/ktenman/mmse-app}
@@ -26,7 +26,7 @@ The source code, documentation, and other materials produced for this thesis are
 
 \subsection*{\Roman{appendixcounter}. Licence}
 
-\addcontentsline{toc}{subsection}{II. Licence}
+\addcontentsline{toc}{subsection}{\Roman{appendixcounter}. Licence}
 
 \subsubsection*{Non-exclusive license to reproduce the thesis and make the thesis public}
 
@@ -61,7 +61,7 @@ Konstantin Tenman\\ %author's name
 
 \subsection*{\Roman{appendixcounter}. Traditional Mini-Mental State Examination (MMSE)} \label{appendix:mmse}
 
-\addcontentsline{toc}{subsection}{III. Traditional Mini-Mental State Examination (MMSE)}
+\addcontentsline{toc}{subsection}{\Roman{appendixcounter}. Traditional Mini-Mental State Examination (MMSE)}
 
 The following table details the tasks involved in the traditional Mini-Mental State Examination (MMSE):
 
@@ -101,35 +101,47 @@ Drawing (1 point) & Assess visuospatial abilities by having the person copy a co
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\newpage
+\refstepcounter{appendixcounter}
+\subsection*{\Roman{appendixcounter}. System Architecture Overview} \label{appendix:system-architecture}
+\addcontentsline{toc}{subsection}{\Roman{appendixcounter}. System Architecture Overview}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{system_architecture_overview.png}
+\caption{High-level architecture diagram of the AI-Powered Web-based MMSE Application, illustrating main components and their interactions}
+\label{fig:high-level-architecture}
+\end{figure}
+
 
 \newpage
 \refstepcounter{appendixcounter}
-
 \subsection*{\Roman{appendixcounter}. Participant Consent Form} \label{appendix:concent}
+\addcontentsline{toc}{subsection}{\Roman{appendixcounter}. Participant Consent Form}
 
-
-\section*{Participant Consent Form for AI-Powered and Traditional MMSE Tool Testing}
+{\small % Reduce font size for the entire form
+\section*{\small Participant Consent Form for AI-Powered and Traditional MMSE Tool Testing}
+\vspace{-0.3cm}
 \noindent
 You are invited to participate in a research study to evaluate both the AI-powered MMSE tool and traditional paper-based MMSE tests. The purpose of this study is to assess the usability, accuracy, and effectiveness of the AI-powered tool in comparison to traditional methods of cognitive assessment. Your participation will involve completing a series of cognitive assessments using both the AI-powered MMSE tool and traditional paper-based MMSE tests.
 
-\vspace{0.5cm}
-
+\vspace{0.2cm}
 \noindent
 \textbf{Confidentiality and Data Protection}
-
+\vspace{-0.2cm}
 \begin{itemize}
+    \setlength{\itemsep}{0pt}
     \item Your participation in this study is voluntary, and you may withdraw at any time without penalty.
     \item All data collected during the study will be kept confidential and will be anonymized.
     \item The data will be used solely for the purposes of this research and will be removed from our records after the analysis is complete.
     \item Your identity will not be revealed in any reports or publications resulting from this study.
 \end{itemize}
 
-\vspace{0.5cm}
-
+\vspace{0.2cm}
 \noindent
 \textbf{Consent}
-
+\vspace{-0.2cm}
 \begin{itemize}
+    \setlength{\itemsep}{0pt}
     \item I understand the purpose of this study and what is expected of me as a participant.
     \item I understand that my participation is voluntary and that I may withdraw at any time without penalty.
     \item I understand that my data will be kept confidential and will be removed after the analysis is complete.
@@ -137,8 +149,7 @@ You are invited to participate in a research study to evaluate both the AI-power
     \item I agree to participate in this study.
 \end{itemize}
 
-\vspace{0.5cm}
-
+\vspace{0.2cm}
 \noindent
 \textbf{Participant's Signature:} \underline{\hspace{8cm}}
 
@@ -148,19 +159,19 @@ You are invited to participate in a research study to evaluate both the AI-power
 \noindent
 \textbf{Date:} \underline{\hspace{8cm}}
 
-\vspace{0.5cm}
-
+\vspace{0.2cm}
 \noindent
-\textbf{Researcher’s Contact Information}
+\textbf{Researcher's Contact Information}
 
 \noindent
 If you have any questions or concerns about this study, please contact:
 
 \begin{tabbing}
-\hspace{3cm} \= Name: \hspace{1cm} \= [Your Name] \\
+\hspace{2cm} \= Name: \hspace{0.5cm} \= [Your Name] \\
 \> Email: \> [Your Email] \\
 \> Phone: \> [Your Phone Number]
 \end{tabbing}
+} % End of small font size
 
 
 \newpage
@@ -168,7 +179,7 @@ If you have any questions or concerns about this study, please contact:
 
 \subsection*{\Roman{appendixcounter}. Writing Workflow} \label{appendix:writing-workflow}
 
-\addcontentsline{toc}{subsection}{IV. Writing Workflow}
+\addcontentsline{toc}{subsection}{\Roman{appendixcounter}. Writing Workflow}
 
 The author utilized a comprehensive set of tools and environments, which are documented here to illustrate the workflow.
 
