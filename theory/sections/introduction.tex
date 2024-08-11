@@ -1,119 +1,77 @@
-Europe's demographic landscape is rapidly aging, with Eurostat projecting the population aged 65 and older to reach 29.4\% by 2050 \cite{Eurostat2020}. This shift correlates with an increase in age-related cognitive impairments. The prevalence of Mild Cognitive Impairment (MCI) in individuals aged 60 and above ranges between 6-12\% \cite{Petersen2018}, while dementia cases in Europe are expected to nearly double to 18.85 million by 2050 \cite{AlzheimerEurope2019}.
+The demographic landscape of Europe is rapidly aging, and Eurostat projects that the population aged 65 and older will reach 29.4\% by 2050 \cite{Eurostat2020}. This shift correlates with an increase in age-related cognitive impairments. Dementia cases in Europe are expected to nearly double to 18.85 million by 2050 \cite{AlzheimerEurope2019}.
 
-This increased prevalence puts a heavy toll on healthcare and the wider community. Early identification and intervention may make a highly relevant difference in the process of cognitive decline, hence improving quality of life and reducing the burden on health care \cite{Livingston2020}. Cognitive assessment tests are paramount in screening, diagnosis, monitoring, and assessing interventions \cite{Cullen2007, Petersen2018}.
+This increased prevalence puts a heavy toll on healthcare and the wider community. Early identification and intervention can make a highly relevant difference in the process of cognitive decline, hence improving quality of life and reducing the burden on health care \cite{Livingston2020}. Cognitive assessment tests are paramount in screening, diagnosis, monitoring, and assessing interventions \cite{Cullen2007, Petersen2018}. However, there are several problems and issues associated with existing assessment methods: variability of administration, use of time, cultural response biases, and limitations of access \cite{Prince2013, Cordell2013, Henrich2010, Goldberg2015, Geddes2020, Bilder2020}. 
 
-There are, however, several problems and issues associated with existing assessment methods: variability of administration, use of time, cultural response biases, and limitations of access \cite{Prince2013, Cordell2013, Henrich2010, Goldberg2015, Geddes2020, Bilder2020}. Despite these difficulties, the study elaborates on developing a Web-based Mini-Mental State Examination (MMSE) application. Despite the HMSE's wide application for detecting mild impairments, it has some limitations, and some cultural biases are reported \cite{Folstein1975, Tombaugh1992}. In this respect, the web-based MMSE method proposed here would aim to increase accessibility, efficiency, and reach, thus benefiting remote or underserved regions \cite{Bauer2012, Zygouris2017, Seifan2015}.
-
-\textbf{Keywords:} aging population, cognitive impairments, dementia, MCI, cognitive assessment, MMSE, web-based tools.
+To address these challenges, this study proposes developing a web-based Mini-Mental State Examination (MMSE) application. While the MMSE is widely used to detect mild cognitive impairments, it has limitations including cultural biases \cite{Folstein1975, Tombaugh1992}. In this respect, the web-based MMSE method proposed here would aim to increase accessibility, efficiency, and reach to the MMSE test. Consequently, benefiting remote or underserved regions \cite{Bauer2012, Zygouris2017, Seifan2015}.
 
 \subsection{The Aging Population and Cognitive Health}
+Europe's demographic landscape is undergoing a significant transformation as a result of its rapidly aging population. Eurostat projections indicate that the proportion of people 65 and older will increase from 20.3\% in 2019 to 29.4\% by 2050 \cite{Eurostat2020}. This demographic change correlates with an increase in age-related cognitive issues, most notably:
+\begin{enumerate}
+    \item \textbf{Mild Cognitive Impairment (MCI):}
+    \begin{itemize}
+        \item \textit{Definition:} A condition involving slight but noticeable decline in cognitive abilities.
+        \item \textit{Prevalence:} Affects 6--12\% of adults aged 60 and older \cite{Petersen2018}.
+    \end{itemize}
+    
+    \item \textbf{Dementia:}
+    \begin{itemize}
+        \item Various forms are expected to rise significantly with the aging population \cite{Livingston2020}.
+        \item Projected to affect nearly 19 million Europeans by 2050 \cite{AlzheimerEurope2019}.
+    \end{itemize}
+\end{enumerate}
 
-The demographic situation in Europe changes dramatically due to the fast-growing aging population. According to the Eurostat view, the share of those 65 and older will increase from 20.3\% in 2019 to 29.4\% by 2050 \cite{Eurostat2020}. This crucial demographic change corresponds to a rise in the incidence of age-related cognitive impairments like MCI and different forms of dementia \cite{Livingston2020}. Recent studies further estimate that MCI now prevails in 6-12\% of adults aged 60 and above \cite{Petersen2018}.
+These trends highlight the growing importance of cognitive health in the aging population of Europe, emphasizing the need for effective screening and intervention strategies.
 
-This increased prevalence of cognitive impairment comes at a considerable cost to health systems, families, and societies. However, timely detection and identification of interventions have been noticed to make a vast difference in the progression of decline. Such timely identification may facilitate healthcare providers' intervention to slow progress, improve quality of life, and reduce the overall burden on healthcare systems \cite{Livingston2020}. Thus, this offers a means whereby timely diagnosis will enable patients and their families to plan a future care pathway, allowing them to decide about the various treatment options brought about by different available avenues \cite{Sperling2011}.
+The increasing prevalence of cognitive impairment poses significant challenges to healthcare systems, families, and societies. However, early detection and targeted interventions can significantly alter the course of decline. Prompt identification allows healthcare providers to implement strategies that may slow progression, improve quality of life, and alleviate overall stress on healthcare infrastructure \cite{Livingston2020}. This approach creates an opportunity for timely diagnosis, empowering patients and their families to map out future care strategies proactively. It enables them to make informed decisions about the diverse treatment options available through various channels \cite{Sperling2011}.
 
-Considering these views, an emerging need presses for efficient, accessible, and trustworthy cognitive assessment tools, enabling mass-scale screening and monitoring of the aging population based on cognitive function. From this, we hasten to give reasons for our research to develop a much-improved Web-based Mini-Mental State Examination application for enhancing accessibility and efficiency in cognitive assessment within clinical and research settings.
+Considering these views, an emerging need demands efficient, accessible, and trustworthy cognitive assessment tools, enabling mass-scale screening and monitoring of the aging population based on cognitive function. From this, we have to give reasons for our research to develop a much improved Web-based Mini-Mental State Examination application to enhance accessibility and efficiency in cognitive assessment within clinical and research settings.
 
-\subsection{Cognitive Assessment and the MMSE}
+\subsection{ The Mini-Mental State Examination (MMSE)}
 
-Cognitive assessment is crucial in detecting and managing cognitive impairments, especially in the elderly. Such assessments enable screening for heterogeneous cognitive disorders and estimation of the severity of specific impairments to monitor disease progression and the effectiveness of interventions. These tools make early detection possible and initiate timely intervention, halting deterioration and enhancing the quality of life, besides offering essential information for studies on cognitive aging \cite{Langa2015, Petersen2018, Weintraub2009}.
+Cognitive assessment is crucial in detecting and managing cognitive impairments, especially in the elderly. These kinds of tests can check for different kinds of cognitive disorders and give an idea of how bad certain impairments are, so that doctors can see how the disease is getting worse and see what treatments are working. These tools make early detection possible and initiate timely intervention, stopping deterioration and improving quality of life, in addition to providing essential information for studies on cognitive aging \cite{Langa2015, Petersen2018, Weintraub2009}. Even though it is relevant, the administration of cognitive assessment has faced a variety of challenges: variability across settings, time-consuming paper-and-pencil methods, cultural and linguistic biases, and remote assessment-related complications \cite{Prince2013, Cordell2013, Henrich2010, Goldberg2015, Geddes2020, Bilder2020}.
 
-Even though it is relevant, the administration of cognitive assessment has faced a variety of challenges: variability across settings, time-consuming paper-and-pencil methods, cultural and linguistic biases, and remote assessment-related complications \cite{Prince2013, Cordell2013, Henrich2010, Goldberg2015, Geddes2020, Bilder2020}.
+Folstein et al. \cite{Folstein1975} developed the MMSE in 1975, becoming a standard cognitive screening tool in clinical practice and research. Test items cover various cognitive domains, such as orientation, attention, memory, language, and visuospatial skills of a subject \cite{Folstein1975, Tombaugh1992, Shulman2006}. In most cases, clinicians perform the test face-to-face with individuals asking them to complete tasks ranging from a subject's cognitive orientation to visual construction. The advantages of MMSE are its ease of administration and its high sensitivity toward moderate to severe levels of cognitive impairments. Nevertheless, it is known to be relatively insensitive to mild impairments, to have cultural biases, and is limited in measuring executive functions \cite{Folstein1975}.
 
-\subsubsection{The Mini-Mental State Examination (MMSE)}
+The need to overcome traditional assessment limitations and address challenges like the COVID-19 pandemic, which highlighted the need for remote healthcare solutions, drives the move towards a web-based MMSE. A web-based MMSE can increase accessibility, reduce administration time, and enable remote patient monitoring, enhancing the ability to track changes over time \cite{Bauer2012, Seifan2015, Zygouris2017, Geddes2020, Cullum2014, Lim2020, Harrington2021}. Modern cognitive evaluations have embraced technologies, such as AI, in personalization and innovating test procedures that capture subtle changes in cognitive function. However, challenges accompany these digital versions of MMSE, including the still-existing digital divide among older adults, concerns about data security, and validation against traditional evaluation methods \cite{Bilder2020, Wild2021}. Discussion on these challenges remains open in building a robust and widely accepted web-based cognitive assessment tool.\\
 
-Folstein et al. developed the MMSE in 1975, becoming a standard cognitive screening tool in clinical practice and research. Test items cover various cognitive domains, such as orientation, attention, memory, language, and visuospatial skills of a subject \cite{Folstein1975, Tombaugh1992, Shulman2006}. In most cases, it is administered face-to-face by clinicians and includes tasks ranging from a subject's cognitive orientation to visual construction.
+\noindent\textbf{The Novelty of the Study:} This research is novel in its approach toward using state-of-the-art AI techniques with Large language models (LLMs) for cognitive assessments. In the current case, a Mixtral-Dolphin 8x7B to be run on Ollama, along with the vision model for tasks that require a visual component and fallbacks from ChatGPT v4, will be utilized. At one's disposal, this armory of technologies recently available creates new opportunities to enhance adaptability, accuracy, and interpretability in cognitive assessments. Equipped with these leading-edge AI technologies, the web-based MMSE will radically change today's traditional cognitive screening and raise a new bar across the discipline. This multi-model approach pushes the envelope on the automation of cognitive assessment, guaranteeing resilience under various cognition and system conditions domains.
 
-The advantages of MMSE are its ease of administration and its high sensitivity toward moderate to severe levels of cognitive impairments. Nevertheless, it is known to be relatively insensitive to mild impairments, to have cultural biases, and is limited in measuring executive functions \cite{Folstein1975}.
+\subsection{Research Objectives}
 
-\subsubsection{Rationale for a Web-Based MMSE}
+This thesis aims to develop and evaluate a web-based version of the Mini-Mental State Examination (MMSE), addressing limitations of traditional cognitive assessment methods by leveraging benefits offered by modern digital technologies. The research is guided by the following objective and key features:
 
-The need to overcome traditional assessment limitations and address challenges like the COVID-19 pandemic, which highlighted remote healthcare solution needs, drives the move towards a web-based MMSE. A web-based MMSE can increase accessibility, reduce administration time, and enable remote patient monitoring, enhancing the ability to track changes over time \cite{Bauer2012, Seifan2015, Zygouris2017, Geddes2020, Cullum2014, Lim2020, Harrington2021}.
+\subsubsection{Primary Research Objective}
 
-Modern cognitive evaluations have embraced technologies, such as artificial intelligence, in personalization and innovating test procedures that capture subtle changes in cognitive function. However, challenges accompany these digital versions of MMSE, including the still-existing digital divide among older adults, concerns about data security, and validation against traditional evaluation methods \cite{Bilder2020, Wild2021}. Discussion on challenges remains open in building a robust and widely accepted web-based cognitive assessment tool.
+Develop and evaluate a web-based adaptation of MMSE, validating its properties against traditional cognitive assessment methods while harnessing the advantages of digital technology.
 
-\textbf{The Novelty of the Study:} This research is novel in its approach toward using state-of-the-art AI techniques with LLMs for cognitive assessments. In the current case, a Mixtral-Dolphin 8x7B to be run on Ollama, along with the vision model for tasks that require a visual component and fallbacks from ChatGPT v4, will be utilized. At one's disposal, this armory of technologies recently available creates new opportunities to enhance adaptability, accuracy, and interpretability in cognitive assessments. Equipped with these leading-edge AI technologies, web-based MMSE will radically change today's traditional cognitive screening and raise a new bar across the discipline. This multi-model approach pushes the envelope on the automation of cognitive assessment, guaranteeing resilience under various cognition and system conditions domains.
+\subsubsection{Key Features and Innovations}
 
-\subsection{Research Objectives and Expert Evaluation} 
-
-This thesis intends to develop and evaluate the web-based version of the Mini-Mental State Examination, which would deal with some of the limitations of traditional methods for cognitive assessment, drawing from the benefits made possible by today's digital technologies. Guiding the research are the following expressed objectives and questions that are to be reviewed by technical experts and those concerned with clinical applications:
-
-\textbf{Primary Research Objective:}
-Develop and evaluate a web-based adaptation of the Mini-Mental State Examination and validate its properties against the constraints of traditional methods for cognitive assessment while taking advantage of the benefits that digital technology can offer.
+The web-based MMSE will incorporate the following key features and innovations:
 
 \begin{itemize}
-    \item \textbf{Hypothesis 1:} Experts will confirm that the web-based MMSE has excellent concurrent validity against the traditional MMSE version~\cite{folstein1975mini}.
-    \item \textbf{Hypothesis 2:} Experts will confirm that the web-based MMSE has excellent test-retest reliability equal to the paper form~\cite{tombaugh1992mini}.
+    \item \textbf{Adaptive Testing:} Utilize item response theory~\cite{embretson2013item} to dynamically adjust question difficulty based on user responses, enhancing sensitivity to subtle cognitive changes.
+    
+    \item \textbf{Multimodal Input:} Implement various input methods including touchscreen, voice recognition, and microphone interactions to accommodate diverse user capabilities.
+    
+    \item \textbf{Automated Scoring and Analysis:} Employ machine learning algorithms~\cite{shatte2019machine} to automate scoring processes and provide detailed cognitive performance analyses.
+    
+    \item \textbf{Remote Monitoring:} Develop capabilities for longitudinal tracking and remote monitoring to detect changes in cognitive function over time.
 \end{itemize}
 
-\textbf{Secondary Research Question:}
-According to experts in cognitive health, what are the perceived advantages of the web-based MMSE in terms of efficiency and clinical utility?
+These features and innovations will guide the development and evaluation of the web-based MMSE, aiming to enhance the accessibility, efficiency, and effectiveness of cognitive assessments through innovative technology.
 
-\begin{itemize}
-    \item \textbf{Hypothesis 3:} Experts will report that the web-based MMSE reduces the administration time and scoring complexity compared to the traditional MMSE.
-    \item \textbf{Hypothesis 4:} Experts will rate the application's usability as high, reflecting ease of use and accessibility.
-\end{itemize}
+\subsection{Thesis Structure}
 
-\textbf{Key Features and Innovations to Be Evaluated:}
-\begin{itemize}
-    \item \textbf{Adaptive Testing:} Use of item response theory~\cite{embretson2013item} to adjust question difficulty based on user responses, aiming to improve sensitivity to subtle cognitive changes.
-    \item \textbf{Multimodal Input:} Inclusion of various input methods such as touchscreen, voice recognition, and microphone interactions to accommodate different user capabilities.
-    \item \textbf{Automated Scoring and Analysis:} Implementation of machine learning algorithms~\cite{shatte2019machine} to automate scoring and provide detailed cognitive performance analyses.
-    \item \textbf{Remote Monitoring:} Capabilities for longitudinal tracking and remote monitoring to detect cognitive function changes over time.
-\end{itemize}
+The structure takes the reader through the research process, the findings related to the web-based MMSE system, and what this tool implies. It has six main chapters related to some points about the research and what it adds regarding cognitive assessment.
 
-In the context of this research, an expert has experience in the professional and academic setting in cognitive neuroscience, geriatric, psychology, digital health technology, or medical informatics. The experts shall have at least five years of experience in the area they represent and currently have positions at an accredited institution or any recognized organization relevant to the said field.
+\paragraph{Chapter 2: Baseline and Literature Review.} This chapter comprehensively discusses and reviews existing literature on cognitive assessments, mainly focusing on the MMSE and its adaptations. It also explores the evolution of computerized cognitive testing and discusses the role of artificial intelligence in enhancing neuropsychological assessment.
 
-However, considering the issues of possible time constraints and recruitment difficulties, an additional assessment strategy may be used if need be. This assessment is done by evaluators with at least five years of experience in software development. Though these evaluators may have little or no background in cognitive assessment, their technical background provides substantial insight into the usability, efficiency, and technical realization of the web-based MMSE application.
+\paragraph{Chapter 3: Research Methodology.} The methodology described in this chapter encompasses the design and implementation of the web-based MMSE application. This includes the technical architecture, the development of cognitive tasks, the integration of artificial intelligence components, and the design of the user interface.
 
-This plan ensures that, even then, a proper review of the working prototype will be conducted, mainly regarding its technical and user interface aspects and its potential to improve the efficiency of the cognitive assessment procedures. This alternative approach mainly means answering the secondary research questions regarding efficiency and usability. By contrast, primary research objectives within the sphere of clinical validity would still need to be validated by experts in cognitive health in the future.
+\paragraph{Chapter 4: Implementation.} This chapter presents the technical details of the application's practical implementation. It covers the system architecture, AI integration process, backend and frontend development, data management strategies, and security measures. The chapter emphasizes the thorough development process of the web-based MMSE system with AI enhancements, concentrating on the crucial design choices and technical difficulties encountered during development.
 
-Keeping flexibility in the assessment strategy allows for a meaningful evaluation of the web-based MMSE system that has contributed to digital cognitive assessment tools and sets a base for future clinical validation studies.
+\paragraph{Chapter 5: Results and Evaluation.} This chapter outlines the implementation results and the findings from the evaluation study. It details the system's performance indicators, outcomes of various testing processes, and the comparison with conventional MMSE approaches. The chapter also analyzes the application's usability, discusses metrics for performance-related detection and monitoring of mild cognitive impairment, and examines how well the implementation met the initial objectives. Finally, it reviews the strengths and limitations of the web-based application, underlining its innovative aspects and discussing the implications for cognitive assessment practices in light of existing literature.
 
-\subsection{Thesis Structure and Significance} 
+\paragraph{Chapter 6: Conclusion.} This final chapter summarizes the essential findings and considers the general implications of the research work. It also suggests future research directions and potential enhancements to the web-based MMSE application.\\
 
-This section outlines the structure of the thesis. It discusses the potential impact and significance of the research in enhancing cognitive assessment practices through a web-based Mini-Mental State Examination (MMSE). Additionally, it highlights the interdisciplinary relevance of the project across computer science, psychology, and healthcare.
-
-\subsubsection{Potential Impact on Cognitive Assessment Practices}
-
-There is a desirability to make a deep impression on the practice with a web-based version of the Mini-Mental State Examination (MMSE). Some of the critical advantages of these innovations include the following:
-
-\paragraph{Standardization} Through web-based administration, this system seeks to minimize variability in test results that often occurs due to different settings and examiners, thus standardizing the procedure more effectively~\cite{Wild2021}.
-
-\paragraph{Accessibility} Utilizing internet technology enhances the availability of cognitive assessments, especially in regions that are otherwise underserved or remote, making these essential tools more accessible~\cite{Bauer2012}.
-
-\paragraph{Efficiency} By automating scoring and analysis, the web-based MMSE can streamline the entire assessment process, significantly cutting down on the time and resources typically required~\cite{Zygouris2017}.
-
-\paragraph{Longitudinal Monitoring} The digital framework of the MMSE enables more accessible and more consistent monitoring of cognitive changes over time, which is crucial for the early detection of cognitive decline~\cite{Lim2020}.
-
-\subsubsection{Relevance to Computer Science and Healthcare}
-
-This thesis spans several disciplines; therefore, in many ways, it can contribute to all of them:
-
-\paragraph{Computer Science} This research advances web-based technologies, explores machine learning algorithms for cognitive assessment and improves user interface design.
-
-\paragraph{Healthcare} By improving early detection and ongoing monitoring of cognitive issues, the project can lead to timely interventions, ultimately enhancing patient outcomes~\cite{Petersen2018}.
-
-\subsubsection{Facilitating Early Detection, Improving Access, and Enabling Large-Scale Data Collection}
-
-The capabilities of the web-based MMSE include:
-
-\paragraph{Facilitating Early Detection} Increased accessibility and sensitivity to subtle cognitive shifts can significantly aid in the earlier detection of cognitive declines~\cite{Sperling2011}.
-
-\paragraph{Improving Access} The web-based nature helps overcome geographical barriers, thus enhancing Access to cognitive assessments in underserved areas~\cite{Seifan2015}.
-
-\subsubsection{Thesis Structure}
-
-The structure takes the reader through the research process, the findings related to the web-based Mini-Mental State Examination system, and what this tool implies. It has six main chapters related to some points about the research and what it adds regarding cognitive assessment.
-
-\paragraph{Chapter 2: Literature Review} This chapter comprehensively reviews existing literature on cognitive assessments, mainly focusing on the MMSE and its adaptations. It also explores the evolution of computerized cognitive testing and discusses the role of artificial intelligence in enhancing neuropsychological assessment.
-
-\paragraph{Chapter 3: Methodology} Detailed methodologies are described in this chapter, covering the design and implementation of the web-based MMSE application. This includes the technical architecture, the development of cognitive tasks, the integration of artificial intelligence components, and the design of the user interface.
-
-\paragraph{Chapter 4: Implementation and Results} This chapter presents the details of the application's practical implementation and the evaluation study's results. It includes the evaluation against traditional MMSE methods and the results, analysis of application usability, and metrics for performance-related detection and monitoring of mild cognitive impairment.
-
-\paragraph{Chapter 5: Discussion} This chapter discusses the results in light of existing literature. It spells out the implications for cognitive assessment practices and reviews the strengths and limitations of the web-based application, underlining its innovative aspects.
-
-\paragraph{Chapter 6: Conclusion} This final chapter summarizes the essential findings and considers the general implications of the research work. It also suggests future research directions and potential enhancements to the web-based MMSE application.
-
-Each chapter builds upon the previous one to thoroughly understand the web-based cognitive assessment application's development, evaluation, and implications. This thesis aims to contribute significantly to the field by enhancing the accessibility, efficiency, and effectiveness of cognitive assessments through innovative technology.
+Each chapter builds upon the previous one to thoroughly understand the web-based cognitive assessment application's development, evaluation, and implications. This thesis aims to contribute significantly to the field by improving the accessibility, efficiency, and effectiveness of cognitive assessments through innovative technology.

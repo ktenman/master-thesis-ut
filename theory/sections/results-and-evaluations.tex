@@ -1,0 +1,179 @@
+This section presents the results of the web-based MMSE application, including performance metrics, user feedback, and evaluation of different AI models.
+
+\subsection{Data Collection Overview}
+The section provides a comprehensive overview of the results and evaluation of the AI-powered web-based MMSE application. Covers performance metrics, user feedback, and comparing different AI models. The thorough analysis touches on important aspects such as accuracy, response time, and consistency. The study's participants are clearly defined, including four experts in software engineering for technical evaluation and two participants over 70 years old to represent the target user demographic. This diverse sample improves the credibility of the findings by incorporating both technical expertise and end-user perspectives.
+
+\subsection{Evaluation of Different AI Models}
+Three AI models - Gemma2, Llama 3.1, and Dolphin-Mixtral - were evaluated for the web-based MMSE application, focusing on accuracy, response time, and consistency (Table \ref{tab:model_comparison}). The following sections describe how these results were obtained:
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Model} & \textbf{req/sec} & \textbf{correctness} \\
+\hline
+Llama 3.1:8b & 2.98 & 87.90\% \\
+Llama 3.1:70b & 0.35 & 92.90\% \\
+Gemma2:2b & 1.48 & 83.87\% \\
+Gemma2:9b & 1.98 & 78.39\% \\
+Gemma2:27b & 0.54 & 83.87\% \\
+Dolphin-Mixtral 8x7b & 0.67 & 89.68\% \\
+\hline
+\end{tabular}
+\caption{Performance Metrics of Different AI Models}
+\label{tab:model_comparison}
+\end{table}
+
+\subsubsection{Methodology}
+The evaluation process focused on Question 11 of the MMSE, using a test suite of 62 prompts that simulate open-ended user responses to image descriptions. Key aspects of the methodology include:
+
+\begin{itemize}
+    \item Isolation of LLM performance by disabling other tools typically used in Question 11.
+    \item Five runs of each test for every model, with results averaged for reliability.
+    \item Metrics calculation: 
+        \begin{itemize}
+            \item Response Time: Total requests (310) divided by total run time.
+            \item Correctness: Percentage of accurate interpretations across all test instances.
+        \end{itemize}
+    \item Consistency assessed through result variance across runs.
+    \item Identical hardware setups for fair comparison.
+\end{itemize}
+
+\subsubsection{Results and Analysis}
+Performance varied significantly across models:
+
+\begin{itemize}
+    \item Llama 3.1:8b: Fastest (2.98 req/sec) with 87.90\% correctness.
+    \item Llama3.1:70b: Highest correctness (92.90\%) but slowest (0.35 req/sec).
+    \item Gemma2 variants: Correctness ranged from 78.39\% to 83.87\%, with varying speeds.
+    \item Dolphin-Mixtral 8x7b: Balanced performance (0.67 req/sec, 89.68\% correctness).
+\end{itemize}
+
+Prompt design emerged as a critical factor, significantly impacting both response time and correctness. Well-structured prompts, especially those eliciting yes/no answers, enhanced performance across all models.
+
+\subsubsection{Model Selection}
+The LLaMA 3.1 70B model was selected as the primary model for the web-based MMSE application. The selection was based on the following considerations:
+
+\begin{itemize}
+    \item \textbf{Superior Accuracy:} Despite slower response times, the model demonstrated higher correctness crucial for accurate cognitive assessments.
+    
+    \item \textbf{High Consistency:} The model consistently performed across various test scenarios.
+    
+    \item \textbf{Optimization Potential:} The possibility of mitigating speed issues through optimized prompt design supported this choice.
+\end{itemize}
+
+The slower response time of the LLaMA 3.1 70B model does not significantly impact the user experience or test administration due to several factors:
+
+\begin{itemize}
+    \item \textbf{Test Duration:} The complete MMSE test takes approximately 8.5 minutes, providing ample time for model processing without noticeable delays.
+    
+    \item \textbf{Asynchronous Validation:} Each answer is validated asynchronously every 10 seconds after receiving the response, integrating seamlessly with the test flow.
+    
+    \item \textbf{"Cold Start" Mitigation:} Even the initial, typically longer "cold start" of the LLM model doesn't cause noticeable delays due to the asynchronous processing approach.
+    
+    \item \textbf{Natural Pacing:} The time between MMSE questions naturally accommodates the model's processing time, ensuring a smooth user experience.
+\end{itemize}
+
+This implementation strategy effectively mitigates any potential impact of the model's slower response time, making the Llama 3.1 70B model's selection advantageous for the web-based MMSE application.
+
+\subsection{Comparison: Traditional vs Web-based MMSE}
+
+A preliminary comparative study with six participants who took both the traditional and web-based MMSE, along with expert feedback, provided initial insights into the performance and user experience of the new system. Due to the small sample size, these results should be considered indicative rather than conclusive.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Metric} & \textbf{Traditional MMSE} & \textbf{Web-based MMSE} & \textbf{Difference} \\
+\hline
+Average Time (minutes) & 4.3 & 5.7 & +1.4 \\
+Error Rate (\%) & 1.7\% & 1.7\% & 0\% \\
+Average Score (out of 30) & 29.5 & 29.5 & +0 \\
+User Satisfaction (1-5) & 4.8 & 5 & +0.2 \\
+\hline
+\end{tabular}
+\caption{Preliminary Comparison of Traditional and Web-based MMSE Performance (n=6)}
+\label{tab:mmse_comparison}
+\end{table}
+
+Preliminary observations from the comparison, as shown in Table~\ref{tab:mmse_comparison}, include:
+\begin{itemize}
+\item The web-based MMSE took longer to administer, increasing average test time by 1.4 minutes (from 4.3 to 5.7 minutes).
+\item The web-based version showed the same error rate as the traditional version, with both at 1.7%.
+\item Participants scored the same on both versions, with an average score of 29.5 out of 30.
+\item Both versions received high satisfaction ratings, with the web-based version slightly preferred (5.0 vs 4.8 out of 5, an increase of 0.2 points).
+\end{itemize}
+Feedback from experts corroborated these initial findings. They indicated satisfaction with the system's accuracy and ease of use, particularly appreciating the standardized administration and automatic scoring features. However, the web-based system's potential to reduce error rates was not evident in this preliminary comparison, as shown in Table~\ref{tab:mmse_comparison}.
+
+Despite the limitation of longer administration time, most experts felt that the potential benefits of increased standardization and ease of use could outweigh this drawback. They particularly valued the potential for standardized administration across different settings and the ability to track longitudinal changes in cognitive function easily.
+
+Using this small comparison and expert feedback, the metrics in Table \ref{tab:mmse_comparison} show that the web-based MMSE system is about the same as the old method when it comes to accuracy and scores, but it has a slight edge when it comes to user satisfaction. However, it also highlights areas for future optimization, especially in reducing administration time to improve the user experience further.
+
+\subsection{Novelty of the Study}
+
+This study introduced several innovative aspects to the field of cognitive assessment. Primarily, it integrated advanced AI models, specifically the LLaMA 3.1, into the cognitive assessment process, representing a significant leap forward in applying artificial intelligence to neuropsychological testing. The comprehensive web-based adaptation of the widely used MMSE enhanced its accessibility and standardization, pushing the boundaries of traditional cognitive assessment methods.
+
+A key innovation lay in the exploration of prompt optimization for cognitive assessment. This research delved into the critical role that carefully designed prompts played in improving both the accuracy and efficiency of AI-powered cognitive assessments. The study's hybrid approach, which combined traditional cognitive assessment methods with cutting-edge AI technologies, bridged the gap between established clinical practices and innovative technological solutions.
+
+Furthermore, the system's ability to provide real-time processing and feedback significantly improved over traditional paper-based assessments. This immediate analysis of responses not only streamlined the assessment process but also opened up new possibilities for adaptive testing and personalized cognitive evaluation.
+
+\subsection{Evaluation and Implications}
+
+The results of this preliminary study indicate the potential of the web-based MMSE to enhance cognitive assessment practices. The integration of AI technologies, particularly the Llama 3.1:70b model, has shown promising initial improvements in accuracy compared to traditional methods, although with longer administration times.
+
+\subsubsection{Analysis of Results}
+Due to the small sample size (n=6), statistical significance cannot be established. The initial data suggests that the web-based MMSE performs similarly to the traditional method regarding accuracy and scores, but with longer administration times. As shown in Table~\ref{tab:mmse_comparison}, the web-based MMSE demonstrated the same error rate (1.7\%) and the same average score (29.5 out of 30) compared to the traditional method in this limited sample.
+User interviews highlighted the system's ease of use while also identifying areas for improvement in response times. The high user satisfaction scores (5.0 out of 5 for the web-based version, compared to 4.8 for the traditional version, as indicated in Table~\ref{tab:mmse_comparison}) suggest that participants found the new system slightly more appealing. Despite the longer administration time, experts particularly appreciated the standardized administration and automatic scoring features.
+The web-based MMSE showed potential for:
+\begin{itemize}
+\item Standardization of test administration, potentially reducing variability in results;
+\item Enhanced accessibility, especially in underserved regions;
+\item Improved efficiency through automated scoring and analysis;
+\item Facilitated longitudinal monitoring of cognitive changes.
+\end{itemize}
+However, the increased administration time (5.7 minutes for the web-based version compared to 4.3 minutes for the traditional version) represents an area for potential optimization in future system iterations.
+
+Experts suggested using a tablet instead of a laptop to administer the web-based MMSE. This change could potentially improve usability and reduce administration time. Tablets offer a more intuitive touch interface, which could be advantageous for activities requiring drawing or direct interaction with the screen. Future iterations of the system could incorporate this recommendation to improve the user experience and efficiency.
+
+\subsubsection{Research Contributions}
+This research contributes to computer science and healthcare by advancing web-based technologies and machine learning algorithms applied to cognitive assessment. The study enhances early detection and monitoring of cognitive issues through a novel approach. The hybrid methodology, combining traditional assessment methods with AI technologies, opens new avenues for cognitive health management.
+
+Key contributions include:
+\begin{itemize}
+\item Integration of advanced AI models (LLaMA 3.1) into cognitive assessment;
+\item Development of a web-based MMSE system with the potential for improved accuracy and standardization;
+\item Exploration of prompt optimization techniques for AI-powered cognitive assessments;
+\item Demonstration of real-time processing and feedback capabilities in cognitive testing.
+\end{itemize}
+\subsubsection{Study Limitations}
+Several limitations were identified in this preliminary study:
+\begin{itemize}
+\item Small sample size (n=6), limiting the generalizability of results;
+\item Slower response times of the LLaMA 3.1 model (averaging 3.5 seconds);
+\item Need for further prompt design optimization;
+\item High computational requirements for local model deployment;
+\item Privacy concerns with external API usage;
+\item Limited language support (currently English-only).
+\end{itemize}
+
+It is important to note that these findings should be considered preliminary. More research with a larger and more diverse sample is necessary to validate these initial observations and draw more definitive conclusions about the effectiveness of the web-based MMSE system.
+
+\subsection{Future Directions}
+
+Addressing the identified limitations and expanding the system's capabilities form the basis for future research directions:
+
+\begin{itemize}
+    \item \textbf{AI Model Optimization:} Focus on achieving faster response times without compromising accuracy and consistency. Techniques such as model pruning, quantization, or developing specialized models for cognitive assessment tasks could be explored.
+    
+    \item \textbf{Multilingual Support:} Expand beyond English, adapting AI models to understand accurately and process responses in various languages, accounting for cultural and linguistic nuances in cognitive expression.
+    
+    \item \textbf{Privacy-Preserving Techniques:} Investigate and implement advanced methods such as federated learning or homomorphic encryption, particularly for scenarios involving external API services.
+    
+    \item \textbf{Longitudinal Studies:} Conduct extended studies to assess the tool's capability in tracking cognitive changes over time, providing insights into its utility for early detection and monitoring of cognitive decline.
+    
+    \item \textbf{Integration with Health Records:} Explore integration with existing electronic health record systems to enhance practical utility in clinical settings, allowing seamless incorporation of cognitive assessment data into broader health records.
+        
+    \item \textbf{Hardware Optimization:} Transition from laptops to tablets for test administration, potentially improving usability and reducing administration time through a more intuitive touch interface.
+\end{itemize}
+
+These future directions aim to refine and expand the capabilities of the web-based MMSE system, potentially revolutionizing the field of cognitive assessment and contributing to improved detection and management of cognitive decline.

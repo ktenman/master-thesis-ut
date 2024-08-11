@@ -1,0 +1,108 @@
+@startuml
+!define TABLE(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define PK(x) <u>x</u>
+!define FK(x) x
+
+TABLE(mmse_user, "mmse_user") {
+    PK(id): BIGINT
+    login: VARCHAR(50)
+    password_hash: VARCHAR(60)
+    first_name: VARCHAR(50)
+    last_name: VARCHAR(50)
+    email: VARCHAR(191)
+    image_url: VARCHAR(256)
+    activated: BOOLEAN
+    lang_key: VARCHAR(10)
+    activation_key: VARCHAR(20)
+    reset_key: VARCHAR(20)
+    created_by: VARCHAR(50)
+    created_date: TIMESTAMP
+    reset_date: TIMESTAMP
+    last_modified_by: VARCHAR(50)
+    last_modified_date: TIMESTAMP
+}
+
+TABLE(mmse_authority, "mmse_authority") {
+    PK(name): VARCHAR(50)
+}
+
+TABLE(mmse_user_authority, "mmse_user_authority") {
+    PK(FK(user_id)): BIGINT
+    PK(FK(authority_name)): VARCHAR(50)
+}
+
+TABLE(test_entity, "test_entity") {
+    PK(id): BIGINT
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+    score: INTEGER
+    FK(user_id): BIGINT
+    FK(patient_profile_id): BIGINT
+}
+
+TABLE(user_answer, "user_answer") {
+    PK(id): BIGINT
+    answer_text: VARCHAR(255)
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+    question_id: VARCHAR(255)
+    FK(test_entity_id): BIGINT
+    score: INTEGER
+    maximum_score: INTEGER
+}
+
+TABLE(patient_profile, "patient_profile") {
+    PK(id): BIGSERIAL
+    patient_id: VARCHAR(255)
+    name: VARCHAR(255)
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+}
+
+TABLE(orientation_to_place_answer, "orientation_to_place_answer") {
+    PK(id): BIGSERIAL
+    question_id: VARCHAR(255)
+    correct_answer: VARCHAR(255)
+    answer_options: VARCHAR(255)
+    FK(patient_profile_id): BIGINT
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+}
+
+TABLE(test_entity_hash, "test_entity_hash") {
+    PK(id): BIGSERIAL
+    hash: VARCHAR(8)
+    FK(test_entity_id): BIGINT
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+}
+
+TABLE(media_recording, "media_recording") {
+    PK(id): BIGSERIAL
+    file_name: VARCHAR(255)
+    FK(test_entity_id): BIGINT
+    question_id: VARCHAR(255)
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+}
+
+TABLE(dolphin_question, "dolphin_question") {
+    PK(id): BIGSERIAL
+    question: VARCHAR(1000)
+    answer: TEXT
+    created_at: TIMESTAMP
+    updated_at: TIMESTAMP
+}
+
+mmse_user "1" -- "0..*" mmse_user_authority
+mmse_authority "1" -- "0..*" mmse_user_authority
+
+mmse_user "1" -- "0..*" test_entity
+patient_profile "1" -- "0..*" test_entity
+test_entity "1" -- "0..*" user_answer
+test_entity "1" -- "1" test_entity_hash
+test_entity "1" -- "0..*" media_recording
+
+patient_profile "1" -- "0..*" orientation_to_place_answer
+
+@enduml
