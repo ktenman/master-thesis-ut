@@ -1,6 +1,6 @@
 The AI-enhanced web-based MMSE application is a sophisticated system that facilitates cognitive assessments in a digital healthcare setting\footnote{A supplementary video demonstrating the application's functionality can be accessed at \url{https://youtu.be/qnlVdwrt8n8}. This video provides a visual aid to support the technical descriptions presented in this thesis.}. This architecture seamlessly integrates modern web technologies, advanced AI capabilities, and robust security measures to provide a comprehensive and user-friendly platform for clinicians and patients. The system employs key design principles to ensure scalability, performance, and security while facilitating the integration of advanced AI capabilities for cognitive assessment.
 
-The initial structure of the application was bootstrapped using JHipster, which provided a solid foundation with pre-configured best practices for security, testing, and API development. However, this chapter will primarily focus on the MMSE aspects of the tool, and detailed discussions on the usage of frameworks like JHipster are beyond the scope of this thesis.
+The initial structure of the application was bootstrapped using JHipster, which provided a solid foundation with pre-configured best practices for security, testing, and API development. However, this chapter will concentrate on the MMSE aspects of the application, while detailed discussions on frameworks like JHipster are beyond the scope of this thesis.
 
 \subsection{Architecture Diagram}
 The AI-Powered web-based MMSE Application is built on a robust and scalable architecture, comprising several key components that work in concert to deliver efficient cognitive assessments. The system architecture consists of core components including the frontend, backend, data storage, specialized services, and external services. These components and their interactions are illustrated in a high-level architecture diagram, which can be found in Appendix \ref{appendix:system-architecture} (Figure \ref{fig:high-level-architecture}).
@@ -14,7 +14,7 @@ The system architecture consists of the following core components:
 \item \textbf{External Services:} Integrates with ChatGPT 4o API, Ollama running the Llama 3.1:70B, and MinIO for advanced functionalities.
 \end{itemize}
 
-The frontend, developed using Vue.js, delivers a responsive and user-centric interface, designed to facilitate seamless interaction for both clinicians and patients. It communicates with the backend through RESTful APIs, using JSON Web Tokens (JWT) for secure authentication and authorization \cite{Jones2015}. This approach ensures a seamless user experience while maintaining robust security measures.
+The frontend, developed using Vue.js, delivers a responsive and user-centric interface, designed to facilitate seamless interaction for both clinicians and patients. It interacts with the backend using RESTful APIs, using JSON Web Tokens (JWT) for secure authentication and authorization \cite{Jones2015}. This method guarantees a user-friendly experience while upholding strong security protocols.
 
 \subsection{AI Integration}
 Integrating AI capabilities into the MMSE application follows a hybrid model, balancing external AI services with locally deployed models. This strategy is driven by considerations of performance, data privacy, and the specialized nature of cognitive evaluations in healthcare settings \cite{Bauer2012}.
@@ -56,7 +56,7 @@ The hybrid approach presents multiple advantages within the cognitive assessment
 \item \textbf{Privacy Protection:} Deploying Llama 3.1:70B in a localized environment ensures that sensitive patient data is processed within a controlled and secure application framework, addressing key concerns in the security of healthcare data \cite{Krutz2017}.
 \item \textbf{Enhanced Accuracy:} Combining different types of models makes cognitive tests more accurate and takes into account the person's situation. This could help find cognitive decline earlier \cite{Grassi2019}.
 \item \textbf{Scalability:} The modular AI integration allows easy incorporation of new models or services as they become available, ensuring the system can adapt to advances in cognitive science and AI technology \cite{Zygouris2017}.
-\item \textbf{Resilience:} Redundancy mechanisms ensure the system can handle a wide range of inputs and edge cases, crucial to maintaining reliability in clinical settings \cite{Bauer2012}.
+\item \textbf{Resilience:} Redundancy mechanisms enable the system to effectively manage various input types and uncommon scenarios, which is essential for maintaining reliability in clinical environments \cite{Bauer2012}.
 \end{itemize}
 
 \subsubsection{Future Extensibility}
@@ -68,7 +68,7 @@ The Web-based MMSE application with AI is built around some key design principle
 \subsubsection{Microservices and Python Services}
 The decision to implement specialized services, such as text analysis and audio processing, as separate Python-based microservices using Flask stems from the need for modularity and technological flexibility. This approach allows for using specialized libraries and frameworks best suited for each task without constraining the entire system to a single technology stack. For example, the text analysis service leverages natural language processing libraries for semantic analysis, while the audio processing service utilizes specific speech recognition tools.
 
-This microservice architecture enhances the system's scalability and maintainability. Each service can be developed, updated, and scaled independently, allowing for more efficient resource allocation and easier integration of new cognitive assessment techniques as they emerge. Moreover, this separation of concerns facilitates more robust testing and fault isolation, which are critical in a healthcare application where reliability is paramount.
+This microservice architecture enhances the system's scalability and maintainability. Each service operates autonomously, allowing for independent development, updates, and scaling, facilitating more efficient resource allocation and the seamless integration of new cognitive assessment techniques as they emerge. Furthermore, this separation of concerns supports more robust testing and fault isolation, both of which are essential in a healthcare application where reliability is critical.
 
 \subsubsection{Architectural Design of RESTful APIs}
 Implementing the RESTful API design for communication between services and the interaction between frontend and backend is based on the principles of statelessness and a uniform interface. This approach guarantees that every request from the frontend to the backend includes all the necessary information to understand and handle the request, ensuring server-side logic and enhancing scalability.

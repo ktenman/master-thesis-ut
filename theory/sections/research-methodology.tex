@@ -133,11 +133,11 @@ Automating the MMSE tasks involved several challenges, requiring careful conside
 
 \textbf{Language:} Naming objects traditionally involves the individual looking at an object and naming it (e.g., "What is this?"). The automated version utilizes image recognition combined with text input. The user views an image and types the name of the object. The system evaluates the input for correctness, taking into account synonyms and common spelling errors.
 
-\textbf{Repetition:} The traditional task requires the individual to repeat a phrase. In the automated version, voice input is used, and the spoken response is transcribed by AI. The transcription is then evaluated for accuracy. Incorrect repetitions are flagged, and the user is asked to try again or move on with feedback.
+\textbf{Repetition:} The traditional task requires the individual to repeat a phrase. The automated version uses voice input, and AI transcribes the spoken response. The transcription is then evaluated for accuracy. Incorrect repetitions are flagged, and the user is asked to try again or move on with feedback.
 
-\textbf{Complex Commands:} This task typically involves a three-stage command (e.g., "Take a paper in your right hand, fold it in half, and put it on the floor"). The automated version uses a drag-and-drop interface where users must complete tasks by dragging and placing items as instructed. The system tracks each action and scores it for accuracy, providing immediate feedback for any mistakes.
+\textbf{Complex Commands:} In the traditional MMSE, this task involves following a series of verbal instructions, such as "Pick up a sheet of paper with your right hand, fold it, and then set it down on the floor" \cite{Folstein1975}. The automated version transforms this into an interactive drag-and-drop interface. Users perform the tasks by dragging items to specified locations as directed. The system tracks each user action, scoring them based on accuracy and providing immediate feedback if any errors occur.
 
-\textbf{Reading:} The individual is asked to read and follow a written command (e.g., "Close your eyes"). The automated system presents the command as text and requests a confirmation from the user upon understanding. The system evaluates the response to ensure comprehension.
+\textbf{Reading:} In this task, the user is required to read and execute a simple written instruction, such as "Close your eyes." The automated system displays the command as on-screen text and asks the user to confirm their understanding. The system then assesses whether the correct action was taken, ensuring that the user has comprehended the instruction.
 
 \textbf{Writing:} Traditionally, the individual writes a sentence. In the automated version, the user inputs the sentence into a text field. The system uses AI to check the grammar and structure of the sentence, providing feedback on any errors and scoring the response accordingly.
 
@@ -160,7 +160,7 @@ The implementation process of the AI-powered web-based MMSE application followed
 \item Backend: a Java-based Spring Boot application;
 \item Frontend: a Vue.js single-page application;
 \item Database: PostgreSQL for persistent data storage;
-\item External services: AI models (ChatGPT, Ollama with Llama 3.1:70b) for answer evaluation;
+\item External services: AI models (ChatGPT, Ollama with Llama 3.1:70B) for answer evaluation;
 \item Caching: Redis for distributed caching and session management;
 \item Message queue: RabbitMQ for asynchronous processing.
 \end{itemize}
