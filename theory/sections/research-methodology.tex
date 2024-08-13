@@ -1,30 +1,47 @@
 This chapter elaborates on the research methodology for the development and evaluation process of an AI-enhanced Web-based MMSE application.
 
-Design Science Research (DSR) is highly suitable for developing and testing such a novel IT artifact in the healthcare sector. DSR is a problem-solving paradigm that seeks to create and evaluate IT artifacts designed to solve identified organizational problems \cite{Hevner2004,Peffers2007}. DSR involves six core activities: problem identification, solution definition, design and development, demonstration, evaluation, and communication \cite{Peffers2007}. In the context of AI-powered healthcare solutions, DSR provides a structured framework for addressing complex, multifaceted challenges while ensuring rigorous evaluation and practical relevance \cite{Gregor2013}. This thesis employs the DSR approach, covering all six activities, as follows:
+Design Science Research (DSR) is highly suitable for developing and testing such a novel IT artifact in the healthcare sector. DSR is a problem-solving paradigm that seeks to create and evaluate IT artifacts designed to solve identified organizational problems \cite{Hevner2004,Peffers2007}. In the context of AI-powered healthcare solutions, DSR provides a structured framework for addressing complex, multifaceted challenges while ensuring rigorous evaluation and practical relevance \cite{Gregor2013}.
 
-\begin{enumerate}
-    \item \textbf{Problem Identification:} The limitations of traditional MMSE were identified and analyzed.
-
-    \item \textbf{Solution Definition:} To address the identified limitations, an AI-powered, web-based MMSE tool was proposed. This solution aims to enhance efficiency, standardization, accessibility, adaptability, longitudinal tracking, sensitivity, data security, and integration with existing health record systems.
-
-    \item \textbf{Design and Development:} The design phase involved transforming traditional MMSE tasks into automated versions suitable for digital administration. The development phase utilized Java-based Spring Boot for the backend, Vue.js for the frontend, PostgreSQL for data storage, and AI models for various tasks.
-
-    \item \textbf{Demonstration:} The tool, currently a proof of concept, was tested on a local machine to demonstrate its functionality and usability. Healthcare professionals could potentially initiate tests, patients would provide responses, AI models would analyze these responses, and results would be presented for evaluation in future deployments.
-
-    \item \textbf{Evaluation:} The performance, usability, and effectiveness of the tool were assessed through initial feedback, testing on the local machine, and performance indicators such as test completion rate, assessment duration, and score consistency.
-
-    \item \textbf{Communication:} The findings and outcomes were communicated through this thesis, and future research papers and presentations. Feedback from these communications will be used for continuous improvement of the tool.
-\end{enumerate}
-
-By systematically following these six main DSR activities, the creation and use of the AI-powered web-based MMSE can solve the problems that have been pointed out, ensuring thorough testing and usefulness in cognitive assessment methods. Figure \ref{fig:dsr-process} illustrates the iterative process of DSR, highlighting the key stages from problem identification to communication of results.
+This research adopts a tailored Design Science Research (DSR) methodology, emphasizing four iterative phases, as depicted in Figure \ref{fig:mmse-development-process}:
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.67\textwidth]{dsr-process.png}
-\caption{The iterative process of Design Science Research, highlighting the key stages from problem identification to communication of results.}
-\label{fig:dsr-process}
+\includegraphics[width=1\textwidth]{theory/figures/flow.drawio.png}
+\caption{Iterative development process for the AI/ML-powered web-based MMSE application, illustrating the key stages from problem identification through design, evaluation, and refinement.}
+\label{fig:mmse-development-process}
 \end{center}
 \end{figure}
+
+\begin{enumerate}
+    \item \textbf{Problem Identification:} The limitations of traditional MMSE were identified and the needs for an AI-powered web-based MMSE were assessed.
+    \item \textbf{Design \& Development:} This phase involved conceptualizing the AI/ML-enhanced MMSE, developing the web-based application, and integrating AI/ML models.
+    \item \textbf{Evaluation:} The system's performance was tested, AI/ML model accuracy and response time were evaluated, expert feedback was gathered, and user experience was analyzed.
+    \item \textbf{Refinement:} Based on evaluation results, this phase focused on optimizing AI/ML model integration, improving prompt engineering, cleaning and preprocessing input data, and enhancing the user interface.
+\end{enumerate}
+
+The process is iterative, with a decision point after the refinement phase to determine if further development is needed. This approach ensures continuous improvement until a satisfactory AI/ML-powered web-based MMSE Application is achieved.
+
+This adaptation of the traditional six-step DSR process was chosen for several key reasons:
+
+\begin{enumerate}
+    \item \textbf{Agility and Iteration:} The four-phase cycle allows for quicker iterations, enabling faster response to new AI developments or changing requirements in cognitive assessment tools.
+    
+    \item \textbf{Focus on Continuous Refinement:} The dedicated 'Refinement' phase and explicit decision point for iteration emphasize the importance of ongoing improvement, which is crucial in AI-powered healthcare applications.
+    
+    \item \textbf{Integration of AI/ML Specifics:} Each phase explicitly includes AI/ML considerations, ensuring that these aspects are central to the development process.
+    
+    \item \textbf{Streamlined Process for Time Constraints:} This condensed model allows for a more focused and efficient research process within the time limitations of a master's thesis.
+    
+    \item \textbf{Alignment with Software Development Practices:} The four-phase cycle mirrors modern software development methodologies like Agile or DevOps, facilitating better integration with real-world development practices.
+    
+    \item \textbf{Enhanced Flexibility:} This model offers greater flexibility to adapt to the unique challenges of developing an AI-powered cognitive assessment tool.
+    
+    \item \textbf{Emphasis on Evaluation and User Feedback:} Significant emphasis is placed on both technical performance assessment and user experience analysis, which are crucial for healthcare applications.
+\end{enumerate}
+
+This adaptation of DSR maintains the rigorous, problem-solving approach of the original methodology while tailoring it to the specific needs of AI-powered healthcare solution development. It provides a structured yet flexible framework that is well-suited to the complex, iterative nature of developing an AI-enhanced web-based MMSE application.
+
+The following sections will detail each phase of this adapted DSR methodology as applied to the development of the AI-powered web-based MMSE application.
 
 \subsection{Problem Identification}
 
@@ -61,7 +78,7 @@ Based on identified limitations in the literature and analysis of the field, thi
 \item \textbf{Longitudinal Tracking:} Facilitate easy monitoring of cognitive changes over time.
 \item \textbf{Data Security:} Implement robust measures to protect patient data and ensure privacy.
 \end{itemize}
-These requirements guide the design and development process of the AI-powered web-based MMSE, ensuring that the resulting tool addresses the key needs identified in the literature and aims to overcome the limitations of traditional cognitive assessment methods.
+These requirements guide the development of the AI-powered web-based MMSE. They ensure the tool addresses key needs and overcomes limitations of traditional cognitive assessments identified in the literature.
 
 \subsection{Artifact Design and Development Process}
 
@@ -78,7 +95,7 @@ The conceptual design of the AI-powered web-based MMSE application involved tran
 \hline
 \textbf{Task Category} & \textbf{Traditional MMSE} & \textbf{Automated Version} \\
 \hline
-Orientation & Verbal questions about time and place & Multiple choice questions (QuestionId 2-5, 15, 17-21) \\
+Orientation & Verbal questions about time and place & Multiple choice questions (QuestionId 2-5, 15), Text input (QuestionId 17-21) \\
 \hline
 Registration & Verbal repetition of three words & Image recognition and multiple choice (QuestionId 6-8) \\
 \hline
@@ -140,12 +157,12 @@ By addressing these challenges, the MMSE application provides a robust, automate
 
 The implementation process of the AI-powered web-based MMSE application followed a structured approach, utilizing modern software engineering practices and technologies. The application was built using a client-server architecture, comprising the following components:
 \begin{itemize}
-    \item Backend: A Java-based Spring Boot application;
-    \item Frontend: A Vue.js single-page application;
-    \item Database: PostgreSQL for persistent data storage;
-    \item External Services: AI models (ChatGPT, Ollama with Llama 3.1:70b) for answer evaluation;
-    \item Caching: Redis for distributed caching and session management;
-    \item Message Queue: RabbitMQ for asynchronous processing.
+\item Backend: a Java-based Spring Boot application;
+\item Frontend: a Vue.js single-page application;
+\item Database: PostgreSQL for persistent data storage;
+\item External services: AI models (ChatGPT, Ollama with Llama 3.1:70b) for answer evaluation;
+\item Caching: Redis for distributed caching and session management;
+\item Message queue: RabbitMQ for asynchronous processing.
 \end{itemize}
 
 Figure \ref{fig:system-architecture} shows the structure and the AI-powered web-based MMSE application, and also illustrates interactions between clinicians, patients, the frontend and backend components, the database, AI models, and Redis for caching and distributed locking purposes. In the rest of this section, we describe each of these components in more detail.
@@ -153,22 +170,22 @@ Figure \ref{fig:system-architecture} shows the structure and the AI-powered web-
 \paragraph{Backend Design}
 The Spring Boot application forms the core of the system, managing business logic, data repositories, and AI service interactions. Key features include:
 \begin{itemize}
-    \item RESTful API with versioning;
-    \item Service layer implementing core business logic;
-    \item Data access layer using Spring Data JPA;
-    \item Integration with external AI services;
-    \item Security implementation with JWT-based authentication;
-    \item Caching and asynchronous processing for improved performance.
+\item RESTful API with versioning;
+\item service layer implementing core business logic;
+\item data access layer using Spring Data JPA;
+\item integration with external AI services;
+\item security implementation with JWT-based authentication;
+\item caching and asynchronous processing for improved performance.
 \end{itemize}
 
 \paragraph{Frontend Design}
 The Vue.js frontend provides a user-friendly interface for both test administrators and test-takers, featuring:
 \begin{itemize}
-    \item Responsive design for various devices;
-    \item State management using Vuex;
-    \item Component-based architecture for maintainability;
-    \item Accessibility features adhering to WCAG guidelines;
-    \item Progressive loading and offline support.
+\item responsive design for various devices;
+\item state management using Vuex;
+\item component-based architecture for maintainability;
+\item accessibility features adhering to WCAG guidelines;
+\item progressive loading and offline support.
 \end{itemize}
 
 \paragraph{Development Environment Setup and Version Control}
@@ -177,12 +194,12 @@ GitHub served as the primary version control and collaboration platform, offerin
 \paragraph{Iterative Development Approach and Continuous Integration}
 The development process followed an iterative model closely aligned with agile principles. The initial phase involved mapping out all the MMSE questions, which served as the basis for database design and the overall application structure. The development workflow proceeded as follows:
 \begin{enumerate}
-\item Question mapping and requirements analysis;
-\item Database schema design based on question requirements;
-\item Implementation of backend services and APIs;
-\item Frontend component development;
-\item Integration of AI and machine learning models;
-\item Continuous testing and refinement.
+\item question mapping and requirements analysis;
+\item database schema design based on question requirements;
+\item implementation of backend services and APIs;
+\item frontend component development;
+\item integration of AI and machine learning models;
+\item continuous testing and refinement.
 \end{enumerate}
 
 A GitHub Actions workflow automated the continuous integration (CI) pipeline \cite{github_actions}. This configuration ensured that each commit triggered codebase compilation, execution of unit and integration tests, and performance of code quality checks.
@@ -226,7 +243,7 @@ This enhanced schema includes relationships and indexing strategies to ensure op
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.65\textwidth]{database-schema.png}
+\includegraphics[width=0.65\textwidth]{simplified-database-schema.png}
 \caption{Database Schema for the AI-Powered MMSE Application. This schema includes user management, test management, patient profiles, and AI integration.}
 \label{fig:database-schema}
 \end{center}
@@ -272,10 +289,10 @@ The database design considers future scalability with partitioning and sharding 
 \paragraph{Security and Privacy Considerations}
 The implementation includes robust security measures \cite{owasp2021top10}:
 \begin{itemize}
-    \item JWT-based authentication and role-based access control;
-    \item Strict CORS configuration;
-    \item Comprehensive audit logging;
-    \item Proactive security monitoring.
+\item JWT-based authentication and role-based access control;
+\item strict CORS configuration;
+\item comprehensive audit logging;
+\item proactive security monitoring.
 \end{itemize}
 
 This implementation process ensured the development of a secure, efficient, and user-friendly AI-powered web-based MMSE application, leveraging modern technologies to enhance cognitive assessment practices.
@@ -303,7 +320,7 @@ The use of the application follows a structured process for administering the MM
     \begin{itemize}
         \item \textit{If AI processing is required}: The system routes the response to the appropriate AI model. For instance:
         \begin{itemize}
-            \item \textbf{Llama 3.1:70b} for complex language comprehension.
+            \item \textbf{Llama 3.1:70B} for complex language comprehension.
             \item \textbf{ChatGPT 4o} for processing drawings.
             \item \textbf{Specialized models} for speech-to-text, synonym detection, and semantic understanding.
         \end{itemize}

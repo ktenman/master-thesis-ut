@@ -1,4 +1,4 @@
-The AI-enhanced Web-based MMSE application is a sophisticated system that facilitates cognitive assessments in a digital healthcare setting. This architecture seamlessly integrates modern web technologies, advanced AI capabilities, and robust security measures to provide a comprehensive and user-friendly platform for clinicians and patients alike. The system employs key design principles to ensure scalability, performance, and security while facilitating the integration of advanced AI capabilities for cognitive assessment.
+The AI-enhanced web-based MMSE application is a sophisticated system that facilitates cognitive assessments in a digital healthcare setting\footnote{A supplementary video demonstrating the application's functionality can be accessed at \url{https://youtu.be/qnlVdwrt8n8}. This video provides a visual aid to support the technical descriptions presented in this thesis.}. This architecture seamlessly integrates modern web technologies, advanced AI capabilities, and robust security measures to provide a comprehensive and user-friendly platform for clinicians and patients. The system employs key design principles to ensure scalability, performance, and security while facilitating the integration of advanced AI capabilities for cognitive assessment.
 
 The initial structure of the application was bootstrapped using JHipster, which provided a solid foundation with pre-configured best practices for security, testing, and API development. However, this chapter will primarily focus on the MMSE aspects of the tool, and detailed discussions on the usage of frameworks like JHipster are beyond the scope of this thesis.
 
@@ -11,20 +11,19 @@ The system architecture consists of the following core components:
 \item \textbf{Backend (Spring Boot App):} Handles core business logic, data processing, and integrations.
 \item \textbf{Data Storage:} Employs PostgreSQL for persistent data storage and Redis for caching.
 \item \textbf{Specialized Services:} Encompasses modules for text analysis, audio processing, NLP services, and a robust security layer.
-\item \textbf{External Services:} Integrates with ChatGPT 4o API, Ollama running the Llama 3.1:70b, and MinIO for advanced functionalities.
+\item \textbf{External Services:} Integrates with ChatGPT 4o API, Ollama running the Llama 3.1:70B, and MinIO for advanced functionalities.
 \end{itemize}
 
-The frontend, built with Vue.js, provides a responsive and intuitive user interface for clinicians and patients. It communicates with the backend through RESTful APIs, using JSON Web Tokens (JWT) for secure authentication and authorization \cite{Jones2015}. This approach ensures a seamless user experience while maintaining robust security measures.
+The frontend, developed using Vue.js, delivers a responsive and user-centric interface, designed to facilitate seamless interaction for both clinicians and patients. It communicates with the backend through RESTful APIs, using JSON Web Tokens (JWT) for secure authentication and authorization \cite{Jones2015}. This approach ensures a seamless user experience while maintaining robust security measures.
 
-\newpage
 \subsection{AI Integration}
 Integrating AI capabilities into the MMSE application follows a hybrid model, balancing external AI services with locally deployed models. This strategy is driven by considerations of performance, data privacy, and the specialized nature of cognitive evaluations in healthcare settings \cite{Bauer2012}.
 
 \subsubsection{AI Models and Roles}
 The system integrates multiple AI models for various tasks:
 \begin{enumerate}
-\item \textbf{Llama 3.1:70b:} This locally deployed model, run on Ollama, is specialized in handling complex language comprehension tasks specific to cognitive assessments \cite{Ollama2024}. It is the primary AI engine for most MMSE tasks, balancing performance and data privacy. Using local models for sensitive healthcare data aligns with recommendations to protect patient confidentiality in digital health applications \cite{Krutz2017}.
-\item \textbf{ChatGPT 4o:} Utilized for advanced image and vision processing tasks \cite{Openai2024}. This external service, accessed via OpenAI's API, is useful for analyzing patient-drawn figures and evaluating visual recognition tasks. Using vision models in cognitive tests could help find small problems with vision and spatial awareness linked to early-stage cognitive decline \cite{Bowers2021}.
+\item \textbf{Llama 3.1:70B:} This locally deployed model, executed on the Ollama platform, is specifically optimized for complex language comprehension tasks within cognitive assessments \cite{Ollama2024}. As the primary AI engine for most MMSE tasks, Llama 3.1:70B balances high performance with robust data privacy. Utilizing local models for processing sensitive healthcare data is in accordance with best practices for safeguarding patient confidentiality in digital health applications \cite{Krutz2017}.
+\item \textbf{ChatGPT 4o:} This model is employed for tasks requiring advanced language understanding and vision processing, particularly in analyzing patient-drawn figures during MMSE tasks. By interpreting these visual elements, ChatGPT 4o assists in detecting subtle cognitive impairments that might not be captured through textual responses alone. The model's ability to seamlessly integrate visual and linguistic data ensures a more comprehensive assessment, addressing the nuances of cognitive decline that are critical in early diagnosis and intervention.
 \item \textbf{Transcription Model:} It converts audio inputs to text, facilitating the analysis of spoken responses. Speech analysis has been demonstrated to be a valuable tool in the early detection of cognitive impairments \cite{Konig2015}.
 \item \textbf{Prediction and Similarity Models:} Employ machine learning algorithms to evaluate responses and detect subtle cognitive changes. These models are based on recent research showing the efficacy of AI in identifying early markers of cognitive decline \cite{Grassi2019}.
 \end{enumerate}
@@ -52,16 +51,16 @@ The AI integration process follows these key steps:
 This multi-step process makes sure that the cognitive test is strong and accurate. It gets around problems with the traditional MMSE, like differences in how the test is graded and the inability to pick up on small changes in cognitive function \cite{Tombaugh1992}.
 
 \subsubsection{Advantages of the Hybrid Approach}
-This hybrid approach offers several advantages in the context of cognitive assessment:
+The hybrid approach presents multiple advantages within the cognitive assessment domain:
 \begin{itemize}
-\item \textbf{Privacy Protection:} By using Llama 3.1:70b locally, sensitive patient data remains within the controlled environment of the application, addressing key concerns in the security of healthcare data \cite{Krutz2017}.
+\item \textbf{Privacy Protection:} Deploying Llama 3.1:70B in a localized environment ensures that sensitive patient data is processed within a controlled and secure application framework, addressing key concerns in the security of healthcare data \cite{Krutz2017}.
 \item \textbf{Enhanced Accuracy:} Combining different types of models makes cognitive tests more accurate and takes into account the person's situation. This could help find cognitive decline earlier \cite{Grassi2019}.
 \item \textbf{Scalability:} The modular AI integration allows easy incorporation of new models or services as they become available, ensuring the system can adapt to advances in cognitive science and AI technology \cite{Zygouris2017}.
-\item \textbf{Resilience:} Fallback mechanisms ensure the system can handle a wide range of inputs and edge cases, crucial to maintaining reliability in clinical settings \cite{Bauer2012}.
+\item \textbf{Resilience:} Redundancy mechanisms ensure the system can handle a wide range of inputs and edge cases, crucial to maintaining reliability in clinical settings \cite{Bauer2012}.
 \end{itemize}
 
 \subsubsection{Future Extensibility}
-The AI integration is designed to be extensible, allowing the incorporation of emerging technologies into cognitive assessment as they develop. This positions the MMSE application to evolve alongside advances in AI and cognitive science, maintaining its relevance and effectiveness in the rapidly changing field of digital healthcare. Additionally, using Ollama has made it very easy to swap models and perform integration testing to understand how many tests are failing, thereby enhancing the robustness and adaptability of the system \cite{Ollama2024, Zygouris2017}.
+The AI integration framework is constructed with extensibility in mind, enabling the seamless integration of emerging technologies as they evolve within the cognitive assessment field. This positions the MMSE application to evolve alongside advances in AI and cognitive science, maintaining its relevance and effectiveness in the rapidly changing field of digital healthcare. Additionally, using Ollama has made it very easy to swap models and perform integration testing to understand how many tests are failing, thereby enhancing the robustness and adaptability of the system \cite{Ollama2024, Zygouris2017}.
 
 \subsection{Design Principles}
 The Web-based MMSE application with AI is built around some key design principles that consider the difficulties of cognitive testing in a digital healthcare setting. These principles guide the overall framework and validate particular implementation decisions.
@@ -71,7 +70,7 @@ The decision to implement specialized services, such as text analysis and audio 
 
 This microservice architecture enhances the system's scalability and maintainability. Each service can be developed, updated, and scaled independently, allowing for more efficient resource allocation and easier integration of new cognitive assessment techniques as they emerge. Moreover, this separation of concerns facilitates more robust testing and fault isolation, which are critical in a healthcare application where reliability is paramount.
 
-\subsubsection{RESTful API Design}
+\subsubsection{Architectural Design of RESTful APIs}
 Implementing the RESTful API design for communication between services and the interaction between frontend and backend is based on the principles of statelessness and a uniform interface. This approach guarantees that every request from the frontend to the backend includes all the necessary information to understand and handle the request, ensuring server-side logic and enhancing scalability.
 
 The adoption of a RESTful methodology simplifies the incorporation of external services and future system upgrades. By conforming to standard HTTP methods and status codes, the system sustains a uniform and user-friendly interface for developers, lowering the learning barrier for new team members and making documentation easier.
@@ -163,14 +162,14 @@ The API includes endpoints for managing test sessions, questions and answers, an
 
 Security is a paramount concern in the backend architecture. Various mechanisms are used to protect sensitive data and the system's integrity.
 \begin{itemize}
-    \item \textbf{Authentication Mechanism (JWT)}: The backend uses JSON Web Tokens (JWT) for authentication \cite{Jones2015}. JWTs are issued to authenticated users and must be included in the Authorization header of subsequent requests.
+    \item \textbf{Authentication Mechanism (JWT)}: The backend employs JSON Web Tokens (JWT) for authentication \cite{Jones2015}. JWTs are issued to authenticated users and must be included in the Authorization header of subsequent requests.
     \item \textbf{Authorization and Role-Based Access Control}: Role-based access control (RBAC) restricts access to specific endpoints and operations based on the user's role. This mechanism helps enforce the principle of least privilege.
 \end{itemize}
 
 The backend integrates with several AI services to enhance the application's cognitive assessment capabilities.
 \begin{itemize}
     \item \textbf{OpenAI Service Integration}: The \texttt{OpenAiService} integrates with the ChatGPT models for advanced question evaluation. It handles tasks such as natural language understanding and response generation.
-    \item \textbf{Ollama Integration}: The \texttt{DolphinService} uses the Llama 3.1:70b model for specific tasks, such as evaluating orientation questions.
+    \item \textbf{Ollama Integration}: The \texttt{DolphinService} uses the Llama 3.1:70B model for specific tasks, such as evaluating orientation questions.
     \item \textbf{Transcription Service}: The transcription service integrates with external APIs to convert audio inputs into text. It processes voice responses, ensuring accurate transcription and handling errors through fallback mechanisms.
     \item \textbf{Prediction and Similarity Services}: These services implement grammar checking and similarity assessment algorithms. They evaluate responses to specific questions, determining thresholds for answer acceptance.
 \end{itemize}
@@ -261,8 +260,8 @@ Effective data management and storage are crucial for the performance and reliab
 \textbf{Caching Strategy}
 To optimize performance and reduce database load, the MMSE application employs Redis for caching frequently accessed data. This strategy is particularly beneficial for:
 \begin{itemize}
-\item User session data, enabling quick retrieval of user states;
-\item Test results and configuration data, reducing repetitive database queries.
+\item user session data, enabling quick retrieval of user states;
+\item test results and configuration data, reducing repetitive database queries.
 \end{itemize}
 The caching system implements Time-To-Live (TTL) policies and cache invalidation methods to ensure data consistency. TTL values are assigned based on data volatility, while manual and event-driven invalidation mechanisms maintain cache accuracy.
 This approach significantly improves response times for frequently used queries, enhancing the overall user experience and system efficiency.
@@ -272,18 +271,18 @@ This approach significantly improves response times for frequently used queries,
 MinIO is integrated into the MMSE application to manage media files, including the storage, retrieval, and deletion of these files. The StorageService class handles all file operations, ensuring that media files are managed efficiently and securely.
 Key features of the StorageService include:
 \begin{itemize}
-\item Secure file upload functionality, generating unique identifiers for each file;
-\item Efficient file retrieval mechanism;
-\item Integration with MinIO, a high-performance object storage system;
-\item Error handling for upload and download operations.
+\item secure file upload functionality, generating unique identifiers for each file;
+\item efficient file retrieval mechanism;
+\item integration with MinIO, a high-performance object storage system;
+\item error handling for upload and download operations.
 \end{itemize}
 This implementation ensures that the MMSE application can effectively manage and access media files associated with cognitive assessments, while maintaining data integrity and security.
 
 \textbf{Security Measures for Media Files}
 To protect the integrity and confidentiality of media files, the application implements several security measures:
 \begin{itemize}
-\item Role-based access control (RBAC) to restrict file access to authorized users only;
-\item Encryption of data in transit using HTTPS protocol;
-\item Secure storage of media files using MinIO, with potential for server-side encryption at rest.
+\item role-based access control (RBAC) to restrict file access to authorized users only;
+\item encryption of data in transit using HTTPS protocol;
+\item secure storage of media files using MinIO, with potential for server-side encryption at rest.
 \end{itemize}
-These measures are crucial in healthcare applications to protect patient data and comply with data privacy regulations. While the current implementation provides a foundation for secure media file handling, further configuration may be necessary to fully meet the highest data security and privacy standards in a production environment \cite{Krutz2017}.
+These measures are crucial in healthcare applications to protect patient data and comply with data privacy regulations. While the current implementation provides a foundation for secure media file handling, further configuration may be necessary to fully meet the highest data security and privacy standards in a production environment (Krutz 2017).

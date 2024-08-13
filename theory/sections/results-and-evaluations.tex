@@ -12,12 +12,12 @@ Three AI models - Gemma2, Llama 3.1, and Dolphin-Mixtral - were evaluated for th
 \hline
 \textbf{Model} & \textbf{req/sec} & \textbf{correctness} \\
 \hline
-Llama 3.1:8b & 2.98 & 87.90\% \\
-Llama 3.1:70b & 0.35 & 92.90\% \\
-Gemma2:2b & 1.48 & 83.87\% \\
-Gemma2:9b & 1.98 & 78.39\% \\
-Gemma2:27b & 0.54 & 83.87\% \\
-Dolphin-Mixtral 8x7b & 0.67 & 89.68\% \\
+Llama 3.1:8B & 2.98 & 87.90\% \\
+Llama 3.1:70B & 0.35 & 92.90\% \\
+Gemma2:2B & 1.48 & 83.87\% \\
+Gemma2:9B & 1.98 & 78.39\% \\
+Gemma2:27B & 0.54 & 83.87\% \\
+Dolphin-Mixtral 8x7B & 0.67 & 89.68\% \\
 \hline
 \end{tabular}
 \caption{Performance Metrics of Different AI Models}
@@ -43,16 +43,16 @@ The evaluation process focused on Question 11 of the MMSE, using a test suite of
 Performance varied significantly across models:
 
 \begin{itemize}
-    \item Llama 3.1:8b: Fastest (2.98 req/sec) with 87.90\% correctness.
-    \item Llama 3.1:70b: Highest correctness (92.90\%) but slowest (0.35 req/sec).
+    \item Llama 3.1:8B: Fastest (2.98 req/sec) with 87.90\% correctness.
+    \item Llama 3.1:70B: Highest correctness (92.90\%) but slowest (0.35 req/sec).
     \item Gemma2 variants: Correctness ranged from 78.39\% to 83.87\%, with varying speeds.
-    \item Dolphin-Mixtral 8x7b: Balanced performance (0.67 req/sec, 89.68\% correctness).
+    \item Dolphin-Mixtral 8x7B: Balanced performance (0.67 req/sec, 89.68\% correctness).
 \end{itemize}
 
 Prompt design emerged as a critical factor, significantly impacting both response time and correctness. Well-structured prompts, especially those eliciting yes/no answers, enhanced performance across all models.
 
 \subsubsection{Model Selection}
-The LLaMA 3.1 70B model was selected as the primary model for the web-based MMSE application. The selection was based on the following considerations:
+The Llama 3.1 70B model was selected as the primary model for the web-based MMSE application. The selection was based on the following considerations:
 
 \begin{itemize}
     \item \textbf{Superior Accuracy:} Despite slower response times, the model demonstrated higher correctness crucial for accurate cognitive assessments.
@@ -62,7 +62,7 @@ The LLaMA 3.1 70B model was selected as the primary model for the web-based MMSE
     \item \textbf{Optimization Potential:} The possibility of mitigating speed issues through optimized prompt design supported this choice.
 \end{itemize}
 
-The slower response time of the LLaMA 3.1 70B model does not significantly impact the user experience or test administration due to several factors:
+The slower response time of the Llama 3.1 70B model does not significantly impact the user experience or test administration due to several factors:
 
 \begin{itemize}
     \item \textbf{Test Duration:} The complete MMSE test takes approximately 8.5 minutes, providing ample time for model processing without noticeable delays.
@@ -111,7 +111,7 @@ Using this small comparison and expert feedback, the metrics in Table \ref{tab:m
 
 \subsection{Novelty of the Study}
 
-This study introduced several innovative aspects to the field of cognitive assessment. Primarily, it integrated advanced AI models, specifically the LLaMA 3.1, into the cognitive assessment process, representing a significant leap forward in applying artificial intelligence to neuropsychological testing. The comprehensive web-based adaptation of the widely used MMSE enhanced its accessibility and standardization, pushing the boundaries of traditional cognitive assessment methods.
+This study introduced several innovative aspects to the field of cognitive assessment. Primarily, it integrated advanced AI models, specifically the Llama 3.1, into the cognitive assessment process, representing a significant leap forward in applying artificial intelligence to neuropsychological testing. The comprehensive web-based adaptation of the widely used MMSE enhanced its accessibility and standardization, pushing the boundaries of traditional cognitive assessment methods.
 
 A key innovation lay in the exploration of prompt optimization for cognitive assessment. This research delved into the critical role that carefully designed prompts played in improving both the accuracy and efficiency of AI-powered cognitive assessments. The study's hybrid approach, which combined traditional cognitive assessment methods with cutting-edge AI technologies, bridged the gap between established clinical practices and innovative technological solutions.
 
@@ -119,17 +119,17 @@ Furthermore, the system's ability to provide real-time processing and feedback s
 
 \subsection{Evaluation and Implications}
 
-The results of this preliminary study indicate the potential of the web-based MMSE to enhance cognitive assessment practices. The integration of AI technologies, particularly the Llama 3.1:70b model, has shown promising initial improvements in accuracy compared to traditional methods, although with longer administration times.
+The results of this preliminary study indicate the potential of the web-based MMSE to enhance cognitive assessment practices. The integration of AI technologies, particularly the Llama 3.1:70B model, has shown promising initial improvements in accuracy compared to traditional methods, although with longer administration times.
 
 \subsubsection{Analysis of Results}
 Due to the small sample size (n=6), statistical significance cannot be established. The initial data suggests that the web-based MMSE performs similarly to the traditional method regarding accuracy and scores, but with longer administration times. As shown in Table~\ref{tab:mmse_comparison}, the web-based MMSE demonstrated the same error rate (1.7\%) and the same average score (29.5 out of 30) compared to the traditional method in this limited sample.
 User interviews highlighted the system's ease of use while also identifying areas for improvement in response times. The high user satisfaction scores (5.0 out of 5 for the web-based version, compared to 4.8 for the traditional version, as indicated in Table~\ref{tab:mmse_comparison}) suggest that participants found the new system slightly more appealing. Despite the longer administration time, experts particularly appreciated the standardized administration and automatic scoring features.
 The web-based MMSE showed potential for:
 \begin{itemize}
-\item Standardization of test administration, potentially reducing variability in results;
-\item Enhanced accessibility, especially in underserved regions;
-\item Improved efficiency through automated scoring and analysis;
-\item Facilitated longitudinal monitoring of cognitive changes.
+\item standardization of test administration, potentially reducing variability in results;
+\item enhanced accessibility, especially in underserved regions;
+\item improved efficiency through automated scoring and analysis;
+\item facilitated longitudinal monitoring of cognitive changes.
 \end{itemize}
 However, the increased administration time (5.7 minutes for the web-based version compared to 4.3 minutes for the traditional version) represents an area for potential optimization in future system iterations.
 
@@ -140,20 +140,20 @@ This research contributes to computer science and healthcare by advancing web-ba
 
 Key contributions include:
 \begin{itemize}
-\item Integration of advanced AI models (LLaMA 3.1) into cognitive assessment;
-\item Development of a web-based MMSE system with the potential for improved accuracy and standardization;
-\item Exploration of prompt optimization techniques for AI-powered cognitive assessments;
-\item Demonstration of real-time processing and feedback capabilities in cognitive testing.
+\item integration of advanced AI models (Llama 3.1) into cognitive assessment;
+\item development of a web-based MMSE system with the potential for improved accuracy and standardization;
+\item exploration of prompt optimization techniques for AI-powered cognitive assessments;
+\item demonstration of real-time processing and feedback capabilities in cognitive testing.
 \end{itemize}
 \subsubsection{Study Limitations}
 Several limitations were identified in this preliminary study:
 \begin{itemize}
-\item Small sample size (n=6), limiting the generalizability of results;
-\item Slower response times of the LLaMA 3.1 model (averaging 3.5 seconds);
-\item Need for further prompt design optimization;
-\item High computational requirements for local model deployment;
-\item Privacy concerns with external API usage;
-\item Limited language support (currently English-only).
+\item small sample size (n=6), limiting the generalizability of results;
+\item slower response times of the Llama 3.1:70B model (averaging 3.5 seconds);
+\item need for further prompt design optimization;
+\item high computational requirements for local model deployment;
+\item privacy concerns with external API usage;
+\item limited language support (currently English-only).
 \end{itemize}
 
 It is important to note that these findings should be considered preliminary. More research with a larger and more diverse sample is necessary to validate these initial observations and draw more definitive conclusions about the effectiveness of the web-based MMSE system.
